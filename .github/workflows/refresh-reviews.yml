@@ -99,3 +99,8 @@ jobs:
 
           echo "::error::Review refresh could not be pushed after 3 attempts."
           exit 1
+
+# Re-committed through the GitHub API to force Actions to register this
+# workflow. The original push landed the file on the default branch but
+# GitHub never indexed it, so it showed as "This workflow does not exist"
+# and could not be dispatched. Content is otherwise unchanged.
