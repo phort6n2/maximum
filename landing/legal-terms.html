@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<!-- Reviewed and rewritten for Maximum Glass Corp (Florida): FDACS Motor
+     Vehicle Repair Act replaces every California ARD/BAR reference (written
+     estimates, invoices, complaints route), the insurance section reflects
+     FS 627.7288 and the 2023 SB 1002 rules (no AOB for glass, no inducements),
+     and governing law is Florida. Re-review if services or law change. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Terms &amp; Conditions | {{LEGAL_NAME}}</title>
+<meta name="description" content="Terms for using this site and for auto glass work performed by {{LEGAL_NAME}}, including what the workmanship warranty covers and what it does not.">
+<link rel="canonical" href="{{CANONICAL}}">
+<meta name="robots" content="noindex,follow">
+<link rel="icon" href="/ASSET/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="32x32" href="/ASSET/img/icon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/ASSET/img/icon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/ASSET/img/apple-touch-icon.png">
+<meta name="theme-color" content="#0C2C47">
+<style>
+:root{
+  --paper:#FFFFFF; --surface-1:#F4FAFD; --surface-2:#EBF5FB;
+  --band-dark-2:#08243C; --band-dark-3:#16436B;
+  --text:#0C1A26; --text-2:#2B3B49; --text-muted:#4C5C6B;
+  --text-on-dark-2:#C9D9EA; --navy:#125380; --cyan:#2581C4;
+  --line:#DCE7ED; --line-on-dark:#1D446C; --gold-on-dark:#FFC53D;
+  --maxw:820px; --r-sm:10px;
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+*,*::before,*::after{ box-sizing:border-box; }
+html,body{ max-width:100%; overflow-x:clip; }
+body{ margin:0; background:var(--paper); color:var(--text); font:400 16px/1.65 var(--font); -webkit-font-smoothing:antialiased; }
+.wrap{ width:100%; max-width:var(--maxw); margin:0 auto; padding:0 20px; }
+.hdr{ border-bottom:1px solid var(--line); background:var(--paper); }
+.hdr .wrap{ display:flex; align-items:center; gap:16px; min-height:64px; }
+.hdr img{ display:block; height:36px; width:auto; }
+.hdr a.back{ margin-left:auto; font-size:.9375rem; font-weight:700; color:var(--navy); text-decoration:none; }
+.hdr a.back:hover{ text-decoration:underline; }
+main{ padding:40px 0 64px; }
+h1{ font-size:clamp(1.75rem,1.4rem + 1.6vw,2.5rem); line-height:1.12; font-weight:800; letter-spacing:-.02em; margin:0 0 10px; }
+h2{ font-size:1.3125rem; line-height:1.25; font-weight:800; letter-spacing:-.015em; margin:34px 0 10px; }
+h3{ font-size:1.0625rem; font-weight:700; margin:22px 0 8px; }
+p,li{ color:var(--text-2); }
+p{ margin:0 0 1em; }
+ul{ margin:0 0 1em; padding-left:1.15em; }
+li{ margin:0 0 .45em; }
+a{ color:var(--navy); text-underline-offset:3px; }
+.updated{ font-size:.875rem; color:var(--text-muted); margin:0 0 28px; }
+.box{ margin:22px 0; padding:18px 20px; background:var(--surface-2); border:1px solid #C7E2F4; border-left:4px solid var(--cyan); border-radius:var(--r-sm); }
+.box p:last-child{ margin-bottom:0; }
+.box h3{ margin-top:0; }
+.ftr{ background:var(--band-dark-2); color:var(--text-on-dark-2); padding:40px 0 24px; font-size:.9375rem; }
+.ftr .wrap{ max-width:1180px; }
+.ftr h2{ color:#fff; font-size:.8125rem; letter-spacing:.09em; text-transform:uppercase; margin:0 0 14px; }
+.ftr-grid{ display:grid; grid-template-columns:minmax(0,1fr); gap:28px; }
+.ftr ul{ list-style:none; margin:0; padding:0; }
+.ftr li{ margin:0 0 2px; }
+.ftr a{ color:var(--text-on-dark-2); text-decoration:none; }
+.ftr a:hover{ color:#fff; text-decoration:underline; }
+.ftr li a,.ftr-legal a,.bar a{ display:inline-block; padding:5px 0; min-height:24px; }
+.bar{ margin-top:26px; padding:16px 18px; background:var(--band-dark-3); border:1px solid var(--line-on-dark); border-radius:var(--r-sm); font-size:.8125rem; line-height:1.6; }
+.bar b{ color:#fff; } .bar a{ color:var(--gold-on-dark); font-weight:700; }
+.ftr-legal{ margin-top:28px; padding-top:18px; border-top:1px solid var(--line-on-dark); font-size:.78125rem; }
+:focus-visible{ outline:3px solid var(--navy); outline-offset:2px; border-radius:6px; }
+@media (min-width:900px){ .ftr-grid{ grid-template-columns:1.6fr 1fr 1fr 1fr; gap:34px; } }
+
+/* ---- mobile parity with the main template -------------------------------
+   These pages carry their own stripped stylesheet and never received the
+   touch-target or reading-measure work done in template.html, so every footer
+   link here was 34.8px while the identical markup on the main pages was 44px.
+   Kept in sync by hand; if this drifts again, factor it into a shared partial. */
+main p, main li{ max-width:56ch; }
+@media (max-width:899px){
+  .ftr li{ margin:0 0 8px; }
+  .ftr li a{ padding:8px 0; min-height:44px; }
+  .ftr-brand a{ padding:10px 0; min-height:44px; }
+  .ftr-legal a{ padding:10px 8px; margin-inline:-8px; min-height:44px; }
+  .areas{ row-gap:8px; }
+  .areas a{ display:block; padding:8px 0; min-height:44px; }
+  .bar a{ padding:10px 0; min-height:44px; }
+  .hdr a.back{ display:inline-block; padding:10px 0; min-height:44px; }
+}
+</style>
+</head>
+<body>
+<header class="hdr">
+  <div class="wrap">
+    <a href="/ASSET/" aria-label="{{LEGAL_NAME}} — home">
+      <img src="/ASSET/img/{{LOGO}}" width="234" height="96" alt="{{LEGAL_NAME}}">
+    </a>
+    <a class="back" href="/ASSET/">← Back to site</a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <h1>Terms &amp; Conditions</h1>
+    <p class="updated">Last updated: {{YEAR}} · Applies to {{DOMAIN}}</p>
+
+    <p>These terms cover your use of this website and the auto glass work we perform. By using this site or booking work with us, you agree to them. Nothing here removes any right you have under Florida law that cannot be waived.</p>
+
+    <h2>1. Who you are dealing with</h2>
+    <p>{{LEGAL_NAME}}, a motor vehicle repair shop registered with the Florida Department of Agriculture and Consumer Services (FDACS) under the Florida Motor Vehicle Repair Act. Our registered place of business is {{ADDRESS_STREET}}, {{ADDRESS_CITY}}, {{ADDRESS_REGION}} {{ADDRESS_ZIP}}, and our MV registration number is shown in the footer of every page on this site.</p>
+    <p>{{AREA_NOTE}}</p>
+
+    <h2>2. Quotes and estimates</h2>
+    <p>Any figure we give you before we have seen the vehicle is an estimate, not a fixed contract price. We work hard to make estimates accurate — that is why we ask for your VIN, which identifies the exact glass your vehicle takes — but the final price depends on the glass actually required and the work actually needed.</p>
+    <p>If we arrive and find the job differs from what was described, we will tell you the revised price and get your authorisation before proceeding. Florida's Motor Vehicle Repair Act requires a registered shop to give you a written estimate for qualifying repairs, obtain your authorisation for the work and its cost, and provide an invoice describing the work performed and the parts supplied. We will not do work you have not agreed to.</p>
+
+    <div class="box">
+      <h3>Repair versus replacement</h3>
+      <p>We will tell you honestly whether your damage can be repaired or needs replacing. A repair is only appropriate while the damage is small, away from the edge of the glass, and outside the driver's primary line of sight. If we recommend replacement, it is because a repair would not be safe or would not hold — not to increase the invoice.</p>
+    </div>
+
+    <h2>3. Safe drive-away time</h2>
+    <p>After a bonded glass replacement, the urethane adhesive needs time to cure before it can perform in a collision. That period — the safe drive-away time — is set by the <em>adhesive manufacturer's specification</em>, and it varies with the product, temperature and humidity on the day. We will tell you the applicable time before we finish.</p>
+    <p><strong>You must not drive the vehicle before that time has elapsed.</strong> Doing so can compromise the bond, and any resulting failure is not covered by our warranty.</p>
+
+    <h2>4. Workmanship warranty</h2>
+    <p>For as long as you own the vehicle, we warrant our own workmanship on glass we installed.</p>
+    <h3>Covered</h3>
+    <ul>
+      <li>Water leaks caused by our installation</li>
+      <li>Wind noise caused by our installation</li>
+      <li>Moulding and trim failures resulting from our fitting</li>
+      <li>Workmanship defects in our installation</li>
+    </ul>
+    <h3>Not covered</h3>
+    <ul>
+      <li>New impact damage — a fresh rock is a new job, not a warranty claim</li>
+      <li>Stress cracks originating from damage that pre-dated our work</li>
+      <li>Defects in the glass itself, which are covered by the glass manufacturer's warranty</li>
+      <li>Damage from a later collision, break-in, vandalism or attempted theft</li>
+      <li>Failures arising from driving before the safe drive-away time elapsed</li>
+      <li>Work performed on the vehicle by someone else after us, including glass removal and refitting</li>
+    </ul>
+    <p>The warranty is to you as the owner and is not transferable when you sell the vehicle. To claim, contact us at {{PHONE}} with the vehicle and the original invoice details, and let us inspect the vehicle before any other work is done to it.</p>
+
+    <h2>5. ADAS calibration</h2>
+    <p>Many vehicles carry a camera or sensor mounted to the windshield that drives features such as lane-keeping assist, adaptive cruise control and automatic emergency braking. Where the manufacturer requires recalibration after glass replacement, that calibration is part of completing the job properly and we will carry it out and provide the scan report.</p>
+    <p>Static calibration has physical requirements — level ground, adequate clear space in front of the vehicle, and controlled lighting. If your location cannot meet them, we will tell you and propose an alternative. <strong>If you decline a required recalibration</strong>, we will note that on your invoice, and we accept no liability for the behaviour of driver-assistance systems on that vehicle afterwards.</p>
+    <p>Driver-assistance systems are aids, not substitutes for driving. Calibrating them does not guarantee they will prevent a collision.</p>
+
+    <h2>6. Insurance</h2>
+    <p>We are happy to bill your insurer directly where they permit it, and to help you understand what your policy covers. But:</p>
+    <ul>
+      <li>We are <strong>not affiliated with, endorsed by or sponsored by any insurance company.</strong> Any mention of an insurer on this site is descriptive only; we display no carrier marks.</li>
+      <li>We are not an insurance agent, broker or adjuster, and we do not give insurance advice. What your policy covers is determined by your policy and your insurer.</li>
+      <li>Coverage information we relay to you comes from your insurer. We check it carefully, but we cannot guarantee your carrier's ultimate determination on a claim.</li>
+      <li><strong>You remain responsible for any amount your insurer does not pay</strong>, including your deductible.</li>
+      <li>We do not offer anything of value — gift cards, cash, rebates or discounts — to induce an insurance claim, and we do not offer discounts intended to offset a deductible. Florida's 2023 auto glass law (SB 1002) prohibits such inducements, and it also ended assignment of benefits for motor vehicle glass: <strong>we will not ask you to sign your claim over to us.</strong></li>
+    </ul>
+    <p>Where this site describes Florida Statute 627.7288 (no insurer deductible on windshield repair or replacement under comprehensive coverage on private passenger vehicles), that is consumer information, not legal or insurance advice; the statute and your policy govern. The choice of repair shop remains yours.</p>
+
+    <h2>7. Appointments, access and cancellation</h2>
+    <p>Because we come to you, we need the vehicle accessible at the agreed time and place, and it must be able to remain stationary through the adhesive cure. Please tell us in advance if the vehicle is in a subterranean garage, a tandem space, a time-limited parking zone, or on a slope — any of those may prevent us working there, and it is better established on the phone than in person.</p>
+    <p>We may reschedule for weather. A urethane bond needs a clean, dry surface, and we will move an appointment rather than fit glass we do not trust. If you need to cancel or rearrange, let us know as early as you reasonably can; where we have already specially ordered glass for your vehicle, we may ask you to cover that cost.</p>
+
+    <h2>8. Payment</h2>
+    <p>Payment is due on completion unless we are billing your insurer directly, in which case your deductible (if any) is due on completion. We will give you an invoice describing the work performed and the parts supplied, as Florida's Motor Vehicle Repair Act requires.</p>
+
+    <h2>9. Use of this website</h2>
+    <p>The content of this site is provided for information about our services. Do not use this site to submit false information, to submit someone else's details without their permission, or to attempt to disrupt or gain unauthorised access to it. We may withdraw access for misuse.</p>
+    <p>The {{LEGAL_NAME}} name, logo and site content belong to us. Vehicle manufacturer and insurance carrier names mentioned on this site are the trademarks of their respective owners and are used only descriptively.</p>
+
+    <h2>10. Accuracy, and limits on our liability</h2>
+    <p>We take care to keep this site accurate, but service availability, coverage areas and pricing change. Nothing on this site is a binding offer, and general guidance here — such as whether a chip is likely repairable — is not a substitute for us actually looking at your vehicle.</p>
+    <p>To the fullest extent permitted by Florida law, our liability arising out of work we perform is limited to correcting our own workmanship under the warranty in section 4, or to the amount you paid us for the work concerned. We are not liable for indirect or consequential losses such as lost earnings, alternative transport, or time off work. Nothing in these terms excludes liability for death or personal injury caused by our negligence, for fraud, or for anything else that cannot lawfully be excluded — and nothing here limits your rights under the Florida Motor Vehicle Repair Act or the Florida Deceptive and Unfair Trade Practices Act.</p>
+
+    <h2>11. Governing law</h2>
+    <p>These terms are governed by the laws of the State of Florida, and the courts of Florida have jurisdiction over any dispute.</p>
+
+    <h2>12. Complaints</h2>
+    <p>If something has gone wrong, tell us first — most issues are fixable and we would rather fix them. Call {{PHONE}} or email <a href="mailto:{{EMAIL}}">{{EMAIL}}</a>.</p>
+    <p>You also have the right to complain to the Florida Department of Agriculture and Consumer Services, which regulates motor vehicle repair shops in this state — online at <a href="https://www.fdacs.gov/" target="_blank" rel="noopener">fdacs.gov</a> or by phone at 1-800-HELP-FLA.</p>
+
+    <h2>13. Changes</h2>
+    <p>We may update these terms. The version that applies to your job is the one published when you authorised the work.</p>
+
+    <h2>14. Contact</h2>
+    <p>{{LEGAL_NAME}}<br>
+    {{ADDRESS_STREET}}<br>
+    {{ADDRESS_CITY}}, {{ADDRESS_REGION}} {{ADDRESS_ZIP}}<br>
+    Phone: <a href="tel:{{PHONE_E164}}">{{PHONE}}</a><br>
+    Email: <a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
+  </div>
+</main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr-grid">
+      <div>
+        <h2>{{LEGAL_NAME}}</h2>
+        <p style="font-size:.875rem;color:var(--text-on-dark-2)">{{FOOTER_BLURB}}</p>
+      </div>
+      <div><h2>Services</h2><ul><!--PAGE:FOOTER_SERVICES--><!--/PAGE:FOOTER_SERVICES--></ul></div>
+      <div><h2>{{AREA_A}}</h2><ul><!--PAGE:FOOTER_AREA_A--><!--/PAGE:FOOTER_AREA_A--></ul></div>
+      <div><h2>{{AREA_B}}</h2><ul><!--PAGE:FOOTER_AREA_B--><!--/PAGE:FOOTER_AREA_B--></ul></div>
+    </div>
+    <div class="bar">
+      <div class="bar-id">
+        <b>{{LEGAL_NAME}}</b> · {{REG_AUTHORITY}} {{REG_LABEL}} <b>{{REG_NUMBER}}</b><br>
+        Registered telephone: <a class="ghl-no-swap" data-no-swap="true" href="tel:{{REG_PHONE_E164}}">{{REG_PHONE}}</a><br>
+        {{AREA_SHORT}}: <a class="ghl-no-swap" data-no-swap="true" href="tel:{{CALL_ASSET_E164}}">{{CALL_ASSET}}</a><br>
+        {{ADDRESS_STREET}}, {{ADDRESS_CITY}}, {{ADDRESS_REGION}} {{ADDRESS_ZIP}}
+      </div>
+      <!--PAGE:BARTRUST--><!--/PAGE:BARTRUST-->
+    </div>
+    <div class="ftr-legal">
+      © {{YEAR}} {{LEGAL_NAME}}. All rights reserved. ·
+      <a href="/ASSET/privacy">Privacy Policy</a> ·
+      <a href="/ASSET/terms">Terms</a> ·
+      <a href="/ASSET/">Home</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

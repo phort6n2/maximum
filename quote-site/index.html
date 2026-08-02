@@ -1,0 +1,2475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mobile Auto Glass, South Florida | Maximum Glass</title>
+<meta name="description" content="Mobile windshield replacement, chip repair and ADAS recalibration across Miami-Dade, Broward and South Florida. The van comes to you. Free quote.">
+<link rel="canonical" href="https://quote.maximumglasscorp.com/">
+<!-- Lets verify.cjs and the QA harness classify a page without knowing this
+     client's slug scheme. Cheap, and it means renaming a slug cannot silently
+     switch off the doorway-content check. -->
+<meta name="page-kind" content="home">
+<meta name="robots" content="index,follow,max-image-preview:large">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Maximum Glass Corp">
+<meta property="og:title" content="Mobile Auto Glass, South Florida | Maximum Glass">
+<meta property="og:description" content="Mobile windshield replacement, chip repair and ADAS recalibration across Miami-Dade, Broward and South Florida. The van comes to you. Free quote.">
+<meta property="og:url" content="https://quote.maximumglasscorp.com/">
+<meta property="og:image" content="https://quote.maximumglasscorp.com/img/og-image.d5929e7c.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mobile Auto Glass, South Florida | Maximum Glass">
+<meta name="twitter:description" content="Mobile windshield replacement, chip repair and ADAS recalibration across Miami-Dade, Broward and South Florida. The van comes to you. Free quote.">
+<meta name="twitter:image" content="https://quote.maximumglasscorp.com/img/og-image.d5929e7c.png">
+
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/icon-32.0d2edd8f.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/img/icon-16.2baea1c6.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.eb73d756.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0C2C47">
+
+<!-- ============================================================
+     TRACKING CONFIG — the only place Google IDs are pasted.
+     Google Ads → Tools → Conversions → your action → Tag setup →
+     "Use Google tag" shows: send_to: 'AW-XXXXXXXXX/AbC-D_efGh12'
+     Guarded on empty values so the page is safe to deploy before
+     the IDs exist — with nothing set, all of this is a no-op.
+     ============================================================ -->
+<!-- Google tag (gtag.js) — STATIC, and it has to stay that way.
+
+     This used to build the script element in JS and append it to the head.
+     That loads gtag.js perfectly well and Tag Assistant can usually still see
+     it, because Tag Assistant hooks dataLayer rather than reading markup. What
+     it defeats is anything that reads the PAGE: Google Ads' own site scan
+     crawls the served HTML looking for the tag, and a script element created
+     at runtime is not in the served HTML to find. The account then reports the
+     tag as missing on a site where it is working, which is unfalsifiable from
+     the Ads UI and sends you looking for a bug in the wrong place.
+
+     The generator emits the tag below with the ID substituted, or emits
+     nothing at all when no ID is configured — the guard that keeps this page
+     safe to deploy before the account exists. Do not hardcode an ID here; it
+     would follow the template to the next client. -->
+<!--PAGE:GTAGSRC--><script async src="https://www.googletagmanager.com/gtag/js?id=AW-11429085252"></script><!--/PAGE:GTAGSRC-->
+<script>
+  window.SITE_CONFIG = {
+    GOOGLE_ADS_ID:    "AW-11429085252",
+    GOOGLE_ADS_LABEL: "REPLACE__conversion-label",
+    GA4_ID:           "",
+    LEAD_VALUE:       0,
+    CURRENCY:         "USD"
+  };
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  (function(){
+    var c = window.SITE_CONFIG;
+    if(!c.GOOGLE_ADS_ID && !c.GA4_ID) return;   // nothing configured → no-op
+    gtag('js', new Date());
+    /* allow_enhanced_conversions is NOT in the snippet Google hands you in the
+       Ads UI, and it is required for the hashed email/phone that fireAdsConversion
+       sends later to be accepted. Pasting the UI snippet over this silently
+       turns enhanced conversions off. */
+    if(c.GOOGLE_ADS_ID){
+      gtag('config', c.GOOGLE_ADS_ID, { allow_enhanced_conversions: true });
+    }
+    if(c.GA4_ID){ gtag('config', c.GA4_ID); }
+  })();
+</script>
+
+<style>
+/* ==========================================================================
+   Master template — light theme.
+   Palette sampled from the real logo (brand blue #2581C4) plus derived
+   orange #FE6221). Every text-on-surface pair below was contrast-checked;
+   the measured ratio is noted where it matters.
+
+   CSS ORDER MATTERS: base tokens → reset → layout → components → utilities
+   → MEDIA QUERIES LAST. Never append an "audit fixes" block after the media
+   queries; equal specificity means it would override them at every width.
+   ========================================================================== */
+:root{
+  /* ---- surfaces (cyan-tinted neutrals, so the page reads as this brand) ---- */
+  --paper:#FFFFFF;
+  --surface-1:#F4FAFD;      /* 4% blue  */
+  --surface-2:#EBF5FB;      /* 7% blue  */
+  --tint-cyan:#DFF0F9;      /* 11% blue */
+  --tint-warm:#FFF5EC;      /* 9% orange — the "money"/insurance band */
+  --band-dark:#0C2C47;      /* white text 14.3:1 */
+  --band-dark-2:#08243C;    /* footer, white text 15.8:1 */
+  --band-dark-3:#16436B;    /* raised surface inside dark bands */
+
+  /* ---- text ---- */
+  --text:#0C1A26;           /* 17.6:1 on white */
+  --text-2:#2B3B49;         /* 11.5:1 */
+  --text-muted:#4C5C6B;     /* 6.9:1  */
+  --text-placeholder:#5E6D7C; /* 5.3:1 on white — inputs are always white */
+  --text-on-dark:#FFFFFF;
+  --text-on-dark-2:#C9D9EA;
+  --text-disabled:#5E6D7C;
+
+  /* ---- brand ---- */
+  --navy:#125380;           /* 8.2:1 on white — safe for text and links */
+  --navy-deep:#0D426A;
+  --cyan:#2581C4;           /* 4.2:1 — fills and large graphics, never small text */
+  --cyan-ink:#1A648F;       /* 6.4:1 — brand blue when it must carry small text */
+  --cyan-graphic:#2581C4;   /* 4.2:1 — brand blue as a border/icon */
+  --cyan-light:#6FB5E3;
+  --cyan-pale:#CCE6F6;
+
+  /* ---- primary action: brand orange, darkened until white text passes AA ---- */
+  --cta:#CB4E1A;            /* white text 4.52:1 */
+  --cta-grad-a:#CB4E1A;
+  --cta-grad-b:#BA4413;     /* white text 5.35:1 */
+  --cta-hover:#B84412;
+  --cta-active:#A23B0F;
+  --cta-text:#FFFFFF;
+  --orange-accent:#FE912A;  /* decorative only, or text on dark (5.4:1) */
+
+  /* ---- lines ---- */
+  --line:#DCE7ED;           /* decorative dividers only */
+  --line-card:#CFDDE6;
+  --line-strong:#AFC3D0;
+  --border-field:#7C8FA3;   /* 3.3:1 — real affordance for inputs */
+  --line-on-dark:#1D446C;
+
+  /* ---- semantic ---- */
+  --success:#0F7A3D;        /* 5.4:1 */
+  --success-tint:#ECFDF3;
+  --success-line:#8CCBA6;
+  --error:#B3261E;          /* 6.5:1 */
+  --error-tint:#FEF2F2;
+  --error-line:#E3A9A5;
+  --gold:#F5A524;           /* star FILL — always paired with the stroke below */
+  --gold-stroke:#A15C06;    /* 5.2:1, so stars are not colour-only */
+  --gold-on-dark:#FFC53D;
+  /* Brand blue lightened for dark panels: 5.95:1 on --band-dark-3, so it
+     holds up on an icon without being mistaken for a text colour. Measured,
+     not picked. */
+  --cyan-on-dark:#8ECDF4;
+
+  --ring:#125380;
+  --ring-w:3px;
+  --ring-offset-w:2px;
+
+  /* ---- geometry ---- */
+  --maxw:1180px;
+  --gutter:20px;
+  --r-xs:6px; --r-sm:10px; --r-md:14px; --r-lg:20px; --r-xl:28px; --r-pill:999px;
+
+  /* ---- shadows: cool blue-black, never pure black (goes brown on a cyan
+         tinted white). Alpha capped low; depth comes from layering. ---- */
+  --sh-xs:0 1px 2px rgba(11,27,43,.05);
+  --sh-sm:0 1px 2px rgba(11,27,43,.06), 0 1px 3px rgba(11,27,43,.04);
+  --sh-md:0 2px 4px -1px rgba(11,27,43,.06), 0 6px 14px -3px rgba(11,27,43,.09);
+  --sh-lg:0 4px 8px -3px rgba(11,27,43,.06), 0 14px 30px -8px rgba(11,27,43,.11);
+  --sh-xl:0 2px 4px rgba(11,27,43,.04), 0 10px 20px -6px rgba(11,27,43,.08), 0 28px 56px -18px rgba(11,27,43,.15);
+  --sh-cta:0 1px 1px rgba(90,32,8,.18), 0 6px 14px -4px rgba(184,68,18,.34);
+  --sh-cta-hover:0 1px 1px rgba(90,32,8,.22), 0 10px 22px -6px rgba(184,68,18,.42);
+
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+  --font-mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+
+  --ease:cubic-bezier(.2,.7,.3,1);
+  --t-fast:120ms; --t:180ms;
+}
+@media (prefers-reduced-motion:reduce){ :root{ --t-fast:1ms; --t:1ms; } }
+
+/* ---------------------------------------------------------------- reset */
+*,*::before,*::after{ box-sizing:border-box; }
+html{ -webkit-text-size-adjust:100%; text-size-adjust:100%; scroll-behavior:smooth; scroll-padding-top:92px; }
+@media (prefers-reduced-motion:reduce){ html{ scroll-behavior:auto; } }
+html,body{ max-width:100%; overflow-x:clip; }   /* clip not hidden — hidden breaks sticky */
+body{
+  margin:0; background:var(--paper); color:var(--text);
+  font:400 16px/1.62 var(--font);
+  -webkit-font-smoothing:antialiased;
+}
+img,svg,video{ max-width:100%; height:auto; }
+h1,h2,h3,h4{ margin:0; color:var(--text); letter-spacing:-.02em; text-wrap:balance; }
+h1{ font-size:clamp(1.875rem,1.35rem + 2.6vw,3.4rem); line-height:1.08; font-weight:800; }
+h2{ font-size:clamp(1.5rem,1.18rem + 1.7vw,2.35rem); line-height:1.16; font-weight:800; }
+h3{ font-size:clamp(1.1875rem,1.1rem + .4vw,1.375rem); line-height:1.3; font-weight:700; letter-spacing:-.01em; }
+h4{ font-size:1.0625rem; line-height:1.35; font-weight:700; letter-spacing:0; }
+p{ margin:0 0 1em; }
+p:last-child{ margin-bottom:0; }
+a{ color:var(--navy); text-decoration-thickness:1.5px; text-underline-offset:3px; }
+a:hover{ color:var(--navy-deep); }
+ul,ol{ margin:0 0 1em; padding-left:1.15em; }
+li{ margin:0 0 .4em; }
+button{ font:inherit; }
+input,select,textarea,button{ font:inherit; max-width:100%; }
+:focus{ outline:none; }
+:focus-visible{ outline:var(--ring-w) solid var(--ring); outline-offset:var(--ring-offset-w); border-radius:var(--r-xs); }
+.sr-only{
+  position:absolute!important; width:1px; height:1px; padding:0; margin:-1px;
+  overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0;
+}
+@media (forced-colors:active){
+  .btn-primary{ border:1px solid ButtonText; }
+  :focus-visible{ outline:3px solid Highlight; }
+}
+
+/* ------------------------------------------------------------- layout */
+.wrap{ width:100%; max-width:var(--maxw); margin:0 auto; padding:0 var(--gutter); }
+.sec{ padding:56px 0; border-top:1px solid var(--line); }
+.sec-1{ background:var(--surface-1); }
+.sec-2{ background:var(--surface-2); }
+.sec-cyan{ background:var(--tint-cyan); border-block:1px solid #C9E9F5; }
+.sec-warm{ background:var(--tint-warm); border-block:1px solid #F5E3D2; }
+.sec-dark{ background:var(--band-dark); border-top:0; color:var(--text-on-dark); }
+.sec-dark h2,.sec-dark h3{ color:var(--text-on-dark); }
+.sec-dark p{ color:var(--text-on-dark-2); }
+.sec-dark a{ color:var(--cyan-light); }
+.sec-head{ max-width:60ch; margin:0 0 32px; }
+.sec-head.center{ margin-inline:auto; text-align:center; }
+/* A centred lead is only ever 1–2 short lines here; balancing stops the second
+   line from being a single orphaned word. Never applied to .prose paragraphs. */
+.sec-head.center .lead{ text-wrap:balance; }
+.eyebrow{
+  display:block; font-size:.8125rem; font-weight:700; letter-spacing:.09em;
+  text-transform:uppercase; color:var(--navy); margin:0 0 10px;
+}
+/* Any dark band, not just .sec-dark. The closing CTA is .final — its own navy
+   gradient — and the eyebrow there inherited --navy on navy: 1.33:1, which is
+   invisible rather than merely low. --cyan-light measures 6.74:1 on the
+   lightest part of that gradient. */
+.sec-dark .eyebrow, .final .eyebrow{ color:var(--cyan-light); }
+.eyebrow::before{
+  content:""; display:block; width:26px; height:3px; border-radius:2px;
+  background:var(--cta); margin:0 0 12px;
+}
+.sec-head.center .eyebrow::before{ margin-inline:auto; }
+.lead{ font-size:1.0625rem; line-height:1.55; color:var(--text-2); }
+.grid{ display:grid; grid-template-columns:minmax(0,1fr); gap:16px; }
+.grid>*{ min-width:0; }
+
+/* -------------------------------------------------------------- buttons */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:10px;
+  min-height:52px; padding:0 24px; border-radius:var(--r-md);
+  font-weight:700; font-size:1.0625rem; line-height:1; text-decoration:none;
+  border:0; cursor:pointer; position:relative;
+  transition:transform var(--t-fast) var(--ease), box-shadow var(--t) var(--ease), background-color var(--t) var(--ease);
+}
+.btn-primary{
+  color:var(--cta-text);
+  background:linear-gradient(180deg,var(--cta-grad-a),var(--cta-grad-b));
+  box-shadow:var(--sh-cta), inset 0 1px 0 rgba(255,255,255,.2);
+}
+.btn-primary:hover{ background:var(--cta-hover); box-shadow:var(--sh-cta-hover); transform:translateY(-1px); color:#fff; }
+.btn-primary:active{ background:var(--cta-active); box-shadow:var(--sh-xs); transform:translateY(0); }
+/* the navy ring is only 2:1 on the orange fill, so a white offset ring goes under it */
+.btn-primary:focus-visible{
+  outline:none;
+  box-shadow:0 0 0 var(--ring-offset-w) #fff, 0 0 0 calc(var(--ring-offset-w) + var(--ring-w)) var(--ring), var(--sh-cta);
+}
+.btn-call{
+  color:#fff; background:var(--cta); border:1.5px solid var(--cta);
+  box-shadow:0 1px 2px rgba(11,27,43,.16);
+}
+.btn-call:hover{ background:var(--cta-dark,#A93F13); border-color:var(--cta-dark,#A93F13); color:#fff; }
+.btn-call svg{ color:#fff; }
+/* On the navy band the solid orange would vibrate against the background;
+   invert to a white button there instead. */
+/* :is(.sec-dark,.final) — .final is a dark band that is NOT .sec-dark, and
+   forgetting that has now produced two separate bugs: an eyebrow at 1.33:1 and,
+   here, a call button that stayed solid orange beside the solid orange submit
+   so neither read as primary. Any rule written for a dark background needs both
+   selectors. */
+:is(.sec-dark,.final) .btn-call{ background:#fff; border-color:#fff; color:var(--cta); }
+:is(.sec-dark,.final) .btn-call:hover{ background:var(--surface-1); border-color:var(--surface-1); color:var(--cta); }
+:is(.sec-dark,.final) .btn-call svg{ color:var(--cta); }
+.btn-ghost{
+  color:var(--text); background:var(--paper);
+  border:1.5px solid var(--line-strong); box-shadow:var(--sh-xs);
+}
+.btn-ghost:hover{ background:var(--surface-1); border-color:var(--border-field); color:var(--text); }
+:is(.sec-dark,.final) .btn-ghost{ background:transparent; color:#fff; border-color:#3A5E8C; }
+:is(.sec-dark,.final) .btn-ghost:hover{ background:rgba(255,255,255,.08); color:#fff; }
+.btn-block{ width:100%; }
+
+/* ------------------------------------------------------------- top bars */
+.util{ background:var(--band-dark); color:var(--text-on-dark-2); font-size:.8125rem; }
+.util .wrap{ display:flex; align-items:center; justify-content:space-between; gap:16px; min-height:34px; padding-block:6px; }
+.util a{ color:var(--gold-on-dark); font-weight:700; text-decoration:none; }
+.util a:hover{ text-decoration:underline; color:var(--gold-on-dark); }
+/* The bar is one line at every width. Only the note is allowed to flex, and it
+   truncates rather than wraps; the call block is rigid. That ordering is what
+   keeps the phone number intact — GoHighLevel DNI rewrites the number at
+   runtime, so its width is not knowable here, and anything that let the number
+   reflow would break it mid-digit-group ("(949) 400-" / "0096"). */
+.util-note{
+  flex:1 1 auto; min-width:0;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.util-call{ flex:0 0 auto; display:flex; align-items:center; gap:6px; white-space:nowrap; }
+.util-call a{ white-space:nowrap; }
+
+.hdr{
+  position:sticky; top:0; z-index:60; background:rgba(255,255,255,.94);
+  backdrop-filter:blur(10px); border-bottom:1px solid var(--line);
+}
+@supports not (backdrop-filter:blur(4px)){ .hdr{ background:var(--paper); } }
+.hdr.scrolled{ background:var(--paper); box-shadow:var(--sh-md); }
+.hdr .wrap{ display:flex; align-items:center; gap:16px; min-height:64px; }
+.brand{ display:flex; align-items:center; flex:0 0 auto; text-decoration:none; }
+.brand img{ display:block; height:44px; width:auto; }
+.nav{ display:none; margin-left:auto; gap:22px; }
+.nav a{
+  font-size:.9375rem; font-weight:600; color:var(--text-2); text-decoration:none;
+  padding:6px 0; white-space:nowrap;
+}
+.nav a:hover{ color:var(--text); box-shadow:inset 0 -2px 0 var(--cta); }
+.hdr-cta{ margin-left:auto; display:flex; align-items:center; gap:10px; }
+
+/* ---- header rating -----------------------------------------------------
+   Fills the dead space between the logo and the call button on mobile. It is
+   deliberately a span, not a link: the only tappable thing in this header
+   should be the call button, so the rating cannot steal a tap that was meant
+   for it. Hidden once the nav appears and the row is genuinely full. */
+.hdr-rating{
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:1px; margin:0 auto; line-height:1; text-align:center; min-width:0;
+}
+.hdr-rating .hr-top{ display:flex; align-items:center; gap:5px; }
+.hdr-rating .hr-g{ width:14px; height:14px; flex:0 0 auto; }
+.hdr-rating .hr-score{
+  font-size:.9375rem; font-weight:800; color:var(--text);
+  font-variant-numeric:tabular-nums;
+}
+.hdr-rating .stars{ gap:0 }
+.hdr-rating .star{ font-size:.6875rem; -webkit-text-stroke-width:.6px; }
+.hdr-rating .hr-sub{
+  font-size:.625rem; font-weight:600; letter-spacing:.01em; color:var(--text-muted);
+  white-space:nowrap;
+}
+@media (max-width:389px){ .hdr-rating .hr-sub{ display:none } }
+@media (max-width:339px){ .hdr-rating{ display:none } }
+/* Solid CTA orange, matching the sticky bar. It was an outlined button with an
+   orange icon, which on mobile collapses to icon-only and read as a disabled
+   control rather than the second-highest-value action on the page. White on
+   --cta is 4.52:1, measured. */
+.callbtn{
+  display:inline-flex; align-items:center; gap:8px; min-height:44px; padding:0 16px;
+  border-radius:var(--r-md); border:1.5px solid var(--cta);
+  background:var(--cta); color:#fff; font-weight:800; font-size:.9375rem;
+  text-decoration:none; white-space:nowrap;
+  box-shadow:0 1px 2px rgba(11,27,43,.16);
+  transition:background var(--t-fast) var(--ease), border-color var(--t-fast) var(--ease);
+}
+.callbtn:hover{ background:var(--cta-dark,#A93F13); border-color:var(--cta-dark,#A93F13); color:#fff; }
+.callbtn svg{ flex:0 0 auto; color:#fff; }
+.callbtn .cb-num{ display:none; }
+
+/* ---------------------------------------------------------------- hero */
+.hero{
+  background:linear-gradient(168deg,var(--tint-cyan) 0%,var(--surface-1) 52%,var(--paper) 100%);
+  padding:20px 0 36px;
+}
+.hero-grid{
+  display:grid; grid-template-columns:minmax(0,1fr); gap:24px; align-items:start;
+  /* Mobile order is the conversion spec: headline, then the FORM, then the
+     supporting bullets. Bullets above the form push the CTA past the fold. */
+  grid-template-areas:"copy" "form" "more";
+}
+.hero-copy{ grid-area:copy; }
+.hero-form{ grid-area:form; }
+.hero-more{ grid-area:more; }
+.hero-copy>.eyebrow{ margin-bottom:12px; }
+.hero h1{ margin:0 0 12px; }
+.hero-sub{ font-size:1.0625rem; line-height:1.55; color:var(--text-2); margin:0 0 16px; max-width:48ch; }
+/* Trims the hero sub to its first clause on small screens — every line removed
+   here lifts the form card toward the fold. */
+@media (max-width:599px){ .sub-more{ display:none; } }
+.hero-bul{ list-style:none; margin:0 0 18px; padding:0; display:grid; gap:10px; }
+.hero-bul li{ margin:0; display:flex; gap:10px; align-items:flex-start; font-size:1rem; color:var(--text-2); }
+.hero-bul svg{ flex:0 0 auto; margin-top:3px; color:var(--success); }
+.hero-actions{ display:flex; flex-wrap:wrap; gap:12px; }
+/* Full width on phones, not centred. The hero column is left-aligned all the
+   way down — eyebrow, headline, subhead, rating — so a centred button breaks
+   the left edge the eye is following. Filling the column aligns with both
+   edges, reads as deliberate, and gives a bigger tap target. */
+@media (max-width:719px){
+  .hero-actions{ display:block; }
+  .hero-actions .btn{ display:flex; width:100%; }
+}
+
+/* rating chip */
+.rb{ display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin:0 0 18px; }
+.rb-item{
+  display:inline-flex; align-items:center; gap:8px; min-height:34px; padding:4px 14px;
+  background:var(--paper); border:1px solid var(--line-card); border-radius:var(--r-pill);
+  font-size:.875rem; color:var(--text); text-decoration:none; box-shadow:var(--sh-xs);
+}
+.rb-item strong{ font-weight:800; }
+.rb-sub{ color:var(--text-muted); }
+
+/* ---- Google rating chip -------------------------------------------------
+   The rating is the strongest trust signal above the fold, so it carries the
+   Google mark and a score sized like a score rather than a run of body text.
+   The stars animate in on first view; see the reduced-motion guard below. */
+.rb-google{ gap:10px; padding:8px 16px; min-height:52px; }
+.rb-g{ width:20px; height:20px; flex:0 0 auto; }
+.rb-score{
+  font-size:1.5rem; font-weight:800; line-height:1; letter-spacing:-.02em;
+  font-variant-numeric:tabular-nums; color:var(--text);
+}
+.rb-stack{ display:flex; flex-direction:column; gap:2px; line-height:1.1; }
+.rb-google .rb-sub{ font-size:.8125rem; }
+
+/* ---- Google score block on the map card -------------------------------- */
+/* Google mark inline with the eyebrow that makes the verification claim. */
+/* The eyebrow's ::before is a block accent bar that sits ABOVE the text. Do not
+   make this element a flex container — that turns the bar into a flex item and
+   drags it onto the same line. Keep it block and inline the mark with the text. */
+.eyebrow-g svg{
+  width:15px; height:15px; vertical-align:-2px; margin-right:6px;
+}
+/* Stars under the rating heading, sized up from the inline ones so the claim
+   in the heading is shown as well as stated. */
+.head-stars{ margin:10px 0 0; display:flex; justify-content:center; }
+.head-stars .star{ font-size:1.375rem; -webkit-text-stroke-width:1.1px; }
+.sec-head.center .head-stars + .lead{ margin-top:12px; }
+
+.gscore-head{
+  display:flex; align-items:center; gap:8px; margin-bottom:10px;
+  font-size:.8125rem; font-weight:700; letter-spacing:.02em; color:var(--text-2);
+}
+.gscore-head svg{ width:18px; height:18px; flex:0 0 auto; margin-left:0; }
+.gscore-row{ display:flex; align-items:center; gap:14px; }
+
+/* ---- star entrance ------------------------------------------------------
+   Each star pops in turn once the block scrolls into view. Deliberately built
+   so the DEFAULT state is "visible": if JS never runs, or the visitor asks for
+   reduced motion, the stars are simply there. Animation is added, never
+   required, so it can never hide the rating. */
+@media (prefers-reduced-motion:no-preference){
+  [data-animate].in .star{
+    animation:starpop .42s var(--ease) backwards;
+  }
+  [data-animate].in .star:nth-child(1){ animation-delay:.02s }
+  [data-animate].in .star:nth-child(2){ animation-delay:.09s }
+  [data-animate].in .star:nth-child(3){ animation-delay:.16s }
+  [data-animate].in .star:nth-child(4){ animation-delay:.23s }
+  [data-animate].in .star:nth-child(5){ animation-delay:.30s }
+  [data-animate].in .rb-score,
+  [data-animate].in .big{ animation:scorepop .5s var(--ease) backwards; }
+}
+@keyframes starpop{
+  from{ opacity:0; transform:scale(.4) rotate(-18deg) }
+  70%{ opacity:1; transform:scale(1.18) rotate(3deg) }
+  to{ opacity:1; transform:none }
+}
+@keyframes scorepop{
+  from{ opacity:0; transform:translateY(6px) scale(.9) }
+  to{ opacity:1; transform:none }
+}
+.rb-link:hover{ border-color:var(--line-strong); color:var(--text); }
+.stars{ display:inline-flex; gap:1px; line-height:1; }
+.star{
+  font-size:1rem; color:var(--gold);
+  -webkit-text-stroke:.9px var(--gold-stroke);   /* fill alone is 2:1 and fails */
+  paint-order:stroke fill;
+}
+.star-half{ opacity:.55; }
+
+/* --------------------------------------------------------- quote form */
+.qc{
+  background:var(--paper); border:1px solid var(--line-card); border-top:4px solid var(--cta);
+  border-radius:var(--r-lg); box-shadow:var(--sh-xl); padding:22px;
+}
+.qc-h{ font-size:1.25rem; font-weight:800; letter-spacing:-.02em; margin:0 0 4px; }
+.qc-sub{ font-size:.875rem; color:var(--text-muted); margin:0 0 18px; }
+.qc-noscript{
+  margin:0 0 18px; padding:12px 14px; border-radius:10px;
+  background:var(--tint-warm); border:1px solid var(--line);
+  font-size:.9375rem; color:var(--text);
+}
+.qc-noscript a{ font-weight:800; }
+/* Off-screen, not display:none — a bot that skips hidden inputs skips the trap. */
+/* display:none, not off-screen. See the honeypot comment in the form: an
+   off-screen input is fair game for Chrome's autofill and a display:none one
+   is not, and a honeypot the browser fills is a trap for customers. */
+.hp{ display:none; }
+.qc-row{ display:grid; grid-template-columns:minmax(0,1fr); gap:14px; }
+.qc-row + .qc-row{ margin-top:14px; }
+/* Short laptop viewports (1280x720 and the like) had 2px of headroom below the
+   submit button once service and vehicle moved into the visible form. Tighten
+   only where height is actually scarce — taller screens keep the roomier
+   spacing, and phones are below the fold regardless. */
+@media (min-width:900px) and (max-height:820px){
+  .qc-sub{ margin-bottom:12px; }
+  .qc-row + .qc-row{ margin-top:10px; }
+  .qc-more-btn{ padding-top:10px; padding-bottom:10px; }
+  .qc-submit{ margin-top:12px; }
+}
+/* Shorter still (a 1366x768 laptop is a ~638px viewport). Drop the sub-heading
+   and tighten the inputs so the submit button stays reachable without a scroll.
+   Desktop only, so the 50px touch height is not in play. */
+@media (min-width:900px) and (max-height:720px){
+  .qc-sub{ display:none; }
+  .qc-more-btn{ padding-top:8px; padding-bottom:8px; }
+  .input{ min-height:44px; padding-top:10px; padding-bottom:10px; }
+  .qc-row{ gap:10px; }
+  .qc-row + .qc-row{ margin-top:8px; }
+  .qc-submit{ min-height:50px; }
+}
+.field{ display:grid; gap:6px; min-width:0; }
+.label{ font-size:.875rem; font-weight:600; color:var(--text); }
+.label .req{ color:var(--cta); margin-left:2px; }
+.opt{ color:var(--text-muted); font-weight:400; }
+.input{
+  width:100%; min-height:50px; padding:13px 14px;
+  font-size:1.03125rem;            /* 16.5px — under 16px iOS Safari zooms on focus */
+  line-height:1.3; color:var(--text); background:var(--paper);
+  border:1.5px solid var(--border-field); border-radius:var(--r-md); appearance:none;
+  transition:border-color var(--t-fast) var(--ease), box-shadow var(--t-fast) var(--ease);
+}
+.input::placeholder{ color:var(--text-placeholder); opacity:1; }  /* Firefox resets opacity */
+.input:hover{ border-color:#66788B; }
+.input:focus{ border-color:var(--navy); box-shadow:0 0 0 3px rgba(0,75,129,.16); outline:none; }
+.input:focus-visible{ outline:none; }
+.input[aria-invalid="true"]{
+  border-color:var(--error); background:var(--error-tint);
+  box-shadow:0 0 0 3px rgba(179,38,30,.14);
+}
+select.input{
+  padding-right:42px; background-repeat:no-repeat; background-position:right 14px center;
+  background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%234C5C6B' stroke-width='2.2' stroke-linecap='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+}
+#vin{ font-family:var(--font-mono); letter-spacing:.04em; }
+.hint{ font-size:.8125rem; color:var(--text-muted); }
+.err{ display:none; font-size:.84375rem; font-weight:600; color:var(--error); }
+.err.on{ display:flex; gap:6px; align-items:flex-start; }
+
+.qc-more-btn{
+  display:flex; align-items:center; gap:12px; width:100%; min-height:52px;
+  padding:10px 14px; text-align:left; background:var(--surface-1);
+  border:1px solid var(--line); border-radius:var(--r-sm); cursor:pointer;
+}
+.qc-more-btn:hover{ background:var(--tint-cyan); }
+.qc-more-btn[aria-expanded="true"]{ background:var(--tint-cyan); border-bottom-left-radius:0; border-bottom-right-radius:0; }
+.qc-more-t{ font-size:.9375rem; font-weight:600; color:var(--text); }
+.qc-more-s{ font-size:.8125rem; color:var(--text-muted); }
+.qc-more-btn .chev{ margin-left:auto; flex:0 0 auto; color:var(--text-muted); transition:transform var(--t) var(--ease); }
+.qc-more-btn[aria-expanded="true"] .chev{ transform:rotate(180deg); }
+#qcMore[hidden]{ display:none; }
+#qcMore{
+  display:grid; gap:14px; padding:18px 14px;
+  background:var(--surface-1); border:1px solid var(--line); border-top:0;
+  border-radius:0 0 var(--r-sm) var(--r-sm);
+}
+.radios{ display:flex; flex-wrap:wrap; gap:8px; border:0; padding:0; margin:0; }
+/* Three options wrapped 2-then-1, leaving the third stranded beside dead space.
+   Two halves and a full-width third fills both rows. Kept on flex rather than
+   grid because the legend is a child here, and legends inside a grid fieldset
+   are handled inconsistently across browsers. */
+@media (max-width:719px){
+  .radios legend{ flex:1 1 100%; }
+  .radio{ flex:1 1 calc(50% - 4px); justify-content:center; }
+  .radio:last-child{ flex-basis:100%; }
+}
+/* Below 360px a half-width pill is too narrow for "Self-pay" and it wraps to a
+   second line, so the row runs 51px against the third's 44px. Stack all three. */
+@media (max-width:359px){
+  .radio{ flex-basis:100%; }
+}
+.radios legend{ font-size:.875rem; font-weight:600; padding:0; margin:0 0 8px; }
+.radio{
+  display:inline-flex; align-items:center; gap:8px; min-height:44px; padding:0 14px;
+  background:var(--paper); border:1.5px solid var(--border-field);
+  border-radius:var(--r-md); cursor:pointer; font-size:.9375rem;
+}
+.radio input{ width:18px; height:18px; accent-color:var(--cta); margin:0; }
+.radio:has(input:checked){ border-color:var(--navy); background:var(--tint-cyan); font-weight:600; }
+#carrierField[hidden]{ display:none; }
+
+.qc-submit{ width:100%; margin-top:18px; min-height:56px; font-size:1.09375rem; }
+.qc-micro{ margin:12px 0 0; font-size:.8125rem; line-height:1.5; color:var(--text-muted); text-align:center; }
+.qc-consent{ margin:12px 0 0; font-size:.75rem; line-height:1.5; color:var(--text-muted); }
+.qc-status{ margin-top:12px; }
+.form-error{
+  display:none; margin-top:12px; padding:12px 14px; font-size:.875rem;
+  background:var(--error-tint); border:1px solid var(--error-line);
+  border-radius:var(--r-sm); color:var(--error);
+}
+.form-error.on{ display:block; }
+.qc-ok{ display:none; }
+.qc-ok.on{ display:block; text-align:center; }
+.qc-ok-i{
+  width:56px; height:56px; margin:0 auto 14px; border-radius:50%;
+  background:var(--success-tint); color:var(--success);
+  display:flex; align-items:center; justify-content:center;
+}
+.qc-ok h3{ margin:0 0 8px; }
+.qc-ok p{ font-size:1rem; color:var(--text-2); }
+
+/* ----------------------------------------------------------- trust bar */
+.tb{
+  display:grid; grid-template-columns:minmax(0,1fr); gap:1px;
+  background:var(--line-card); border:1px solid var(--line-card);
+  border-radius:var(--r-md); overflow:hidden; margin-top:26px;
+}
+.tb>div{ background:var(--paper); padding:14px 16px; display:flex; gap:10px; align-items:flex-start; min-width:0; }
+.tb svg{ flex:0 0 auto; margin-top:2px; color:var(--cyan-ink); }
+.tb b{ display:block; font-size:.875rem; }
+.tb span{ font-size:.8125rem; color:var(--text-muted); }
+
+/* --------------------------------------------------------------- cards */
+.card{
+  background:var(--paper); border:1px solid var(--line-card);
+  border-radius:var(--r-lg); padding:22px; min-width:0;
+}
+.card-i{
+  width:44px; height:44px; border-radius:var(--r-sm); background:var(--tint-cyan);
+  color:var(--cyan-ink); display:flex; align-items:center; justify-content:center; margin:0 0 14px;
+}
+.card h3{ margin:0 0 8px; }
+.card p{ font-size:.9375rem; color:var(--text-2); margin:0 0 12px; }
+.card-link{ font-size:.9375rem; font-weight:700; color:var(--navy); text-decoration:none; }
+.card-link:hover{ text-decoration:underline; }
+a.card{ display:block; text-decoration:none; transition:border-color var(--t) var(--ease), box-shadow var(--t) var(--ease), transform var(--t) var(--ease); }
+a.card:hover{ border-color:var(--line-strong); box-shadow:var(--sh-md); transform:translateY(-2px); }
+a.card:focus-visible{ outline:none; box-shadow:0 0 0 2px var(--paper),0 0 0 5px var(--ring),var(--sh-md); }
+
+@media (max-width:719px){
+  /* Stacked, the 44px tile sat alone above the heading and pushed every card
+     tall enough that only one fits the screen. Pair it with the heading.
+     
+     :has(.card-i) is load-bearing, not decoration. Half the .card elements on
+     this site have no icon — the warranty pair, the pricing cards, the
+     insurance cards — and they are heading + list, not icon + heading. Without
+     the guard their list claimed column 1, the heading was forced into a
+     squeezed column 2, and it wrapped one word per line off the screen edge.
+     Browsers without :has() simply skip the block and keep the stacked layout,
+     which is the correct fallback. */
+  a.card:has(> .card-i), .card:has(> .card-i){
+    display:grid; grid-template-columns:auto minmax(0,1fr);
+    column-gap:12px; align-items:center; padding:18px;
+  }
+  .card:has(> .card-i) .card-i{ width:40px; height:40px; margin:0; grid-column:1; grid-row:1; }
+  .card:has(> .card-i) h3{ grid-column:2; grid-row:1; margin:0; }
+  .card:has(> .card-i) p{ grid-column:1/-1; margin:12px 0 10px; }
+  .card:has(> .card-i) .card-link{ grid-column:1/-1; }
+}
+
+
+/* ---------------------------------------------------------- prose body */
+/* The reading column stays at a 72ch measure and stays LEFT-ALIGNED — centring
+   the text itself would give it a ragged left edge and wreck readability.
+   What gets centred is the COLUMN, not the words: at desktop widths a 641px
+   column pinned to the left of an 1180px container strands ~645px of dead air
+   on the right, which is the "lots of space on the right" complaint. Auto
+   inline margins are a no-op below ~680px, where the column already fills the
+   container, so this needs no media query and cannot affect mobile. */
+/* 56ch, not 72ch. The ch unit is the advance width of "0", which is far wider
+   than average lowercase, so 72ch rendered 96 characters per line — a third
+   over the 75 that prose should top out at. Measured per line with
+   Range.getBoundingClientRect(), not estimated from the font size. */
+/* The body is emitted as chapters, one per <h2> — see proseHtml() in
+   build-pages.cjs. .prose is still the text column and keeps every rule below,
+   so nothing about the typography changed; what changed is where the column
+   sits and what is beside it. */
+.chaps{ display:grid; gap:40px; }
+.prose{ max-width:56ch; margin-inline:auto; }
+.pchap > h2, .pchap-t > h2{ margin:0 0 12px; }
+.pchap .prose > :first-child{ margin-top:0; }
+/* Left-aligned, not centred. Between 600 and 900px the container is wider than
+   56ch, so the inherited margin-inline:auto indented every paragraph while its
+   heading still started at the container edge. */
+.pchap .prose{ margin-inline:0; }
+.pchap h3{ margin:26px 0 10px; }
+/* Mobile: the photo sits between the heading and the prose, which is the only
+   thing breaking up 400-900 words on a phone. Bounded height so a portrait
+   shot cannot take a whole screen on its own. */
+.pchap-fig figure{
+  margin:0 0 20px; background:var(--paper); border:1px solid var(--line-card);
+  border-radius:var(--r-lg); overflow:hidden;
+}
+.pchap-fig img{
+  display:block; width:100%; height:auto; max-height:340px; object-fit:cover;
+  background:var(--surface-2);
+}
+.pchap-fig figcaption{ padding:12px 16px; font-size:.875rem; color:var(--text-muted); }
+
+.prose h3{ margin:26px 0 10px; }
+.prose p,.prose li{ color:var(--text-2); }
+.prose ul{ padding-left:1.1em; }
+.prose li{ margin-bottom:.5em; }
+.prose strong{ color:var(--text); }
+.callout{
+  margin:22px 0; padding:18px 20px; background:var(--surface-2);
+  border:1px solid #C9E9F5; border-left:4px solid var(--cyan); border-radius:var(--r-sm);
+}
+.callout p:last-child{ margin-bottom:0; }
+.callout h3{ margin:0 0 8px; font-size:1.0625rem; }
+
+/* -------------------------------------------------------------- steps */
+.steps{ counter-reset:s; display:grid; gap:24px; }
+.step{ display:grid; grid-template-columns:48px minmax(0,1fr); gap:16px; align-items:start; }
+.step-n{
+  width:48px; height:48px; border-radius:50%; background:var(--band-dark); color:#fff;
+  display:flex; align-items:center; justify-content:center; font-weight:800; font-size:1.125rem;
+  font-variant-numeric:tabular-nums;
+}
+.step:last-child .step-n{ background:var(--cta); }
+.step h3{ margin:0 0 6px; }
+.step p{ font-size:.9375rem; color:var(--text-2); margin:0; }
+
+/* ------------------------------------------------------------ gallery */
+.gal{ display:grid; grid-template-columns:minmax(0,1fr); gap:16px; }
+.gal figure{ margin:0; background:var(--paper); border:1px solid var(--line-card); border-radius:var(--r-lg); overflow:hidden; }
+.gal img{ display:block; width:100%; aspect-ratio:4/3; object-fit:cover; background:var(--surface-2); }
+.gal figcaption{ padding:12px 16px; font-size:.875rem; color:var(--text-muted); }
+
+/* ------------------------------------------------------------ reviews */
+/* One row of three on desktop. The column rules live in the width blocks near
+   the bottom of this file, NOT here — a later `@media (min-width:600px)` sets
+   two columns, and since media queries add no specificity, source order is what
+   decides. A 900px rule written here would simply lose. */
+.revs{ display:grid; grid-template-columns:minmax(0,1fr); gap:16px; }
+
+/* ---- Google listing + map ---- */
+.mapgrid{ display:grid; grid-template-columns:minmax(0,1fr); gap:20px; align-items:stretch; }
+.mapframe{
+  position:relative; min-height:300px; overflow:hidden;
+  border:1px solid var(--line-card); border-radius:var(--r-lg); background:var(--surface-2);
+}
+.mapframe iframe{ display:block; width:100%; height:100%; min-height:300px; border:0; }
+.mapinfo{
+  background:var(--paper); border:1px solid var(--line-card); border-radius:var(--r-lg);
+  padding:24px; display:flex; flex-direction:column; gap:14px; min-width:0;
+}
+.mapinfo .big{ font-size:2.5rem; font-weight:800; line-height:1; letter-spacing:-.02em; font-variant-numeric:tabular-nums; }
+.mapinfo dl{ margin:0; display:grid; gap:10px; }
+.mapinfo dt{ font-size:.75rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--text-muted); }
+.mapinfo dd{ margin:0; font-size:.9375rem; color:var(--text-2); }
+.mapnote{ font-size:.875rem; color:var(--text-muted); }
+.rev{
+  margin:0; background:var(--paper); border:1px solid var(--line-card);
+  border-radius:var(--r-lg); padding:22px; box-shadow:var(--sh-sm); min-width:0;
+}
+.rev .stars{ margin-bottom:12px; }
+.rev blockquote{ margin:0; font-size:1rem; line-height:1.6; color:var(--text-2); }
+/* Card header: avatar, name over date, Google mark pinned right — the layout
+   Google itself uses, so the card reads as a review rather than a testimonial
+   we typed. The reviews are the real ones from the Places API, and Google's
+   terms require attribution when their Places content is displayed, so the
+   mark is doing compliance work as well as visual work. */
+.rev-head{
+  display:flex; align-items:center; gap:10px;
+  margin-bottom:12px; font-size:.875rem;
+}
+.rev-av{
+  flex:0 0 auto; width:36px; height:36px; border-radius:50%;
+  display:grid; place-items:center;
+  font-weight:700; font-size:.9375rem; color:#fff; line-height:1;
+  background:var(--av-bg, #5F6368);
+}
+.rev-id{ min-width:0; display:flex; flex-direction:column; gap:1px; }
+.rev-name{
+  font-weight:700; color:var(--text);
+  overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+}
+.rev-when{ font-weight:400; color:var(--text-muted); font-size:.8125rem; }
+/* Pinned right and never shrinks — a squashed Google mark is worse than none. */
+.rev-g{ flex:0 0 auto; margin-left:auto; width:18px; height:18px; display:block; }
+/* ---- stat band -------------------------------------------------------
+   Large numerals do visual work that prose cannot, and every figure here is
+   derived from real data by the generator rather than authored. */
+/* Depth from a radial wash rather than a flat fill, matching the closing CTA,
+   plus hairline panels so each figure reads as its own object at any column
+   count. Dividers via nth-child break when the grid reflows; panels do not. */
+.statband{
+  background:radial-gradient(120% 120% at 50% 0%,#17436D,#0C2C47);
+  color:#fff; padding:40px 0;
+  border-block:1px solid rgba(255,255,255,.08);
+}
+.stats{
+  display:grid; gap:12px;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  text-align:center;
+}
+.stat{
+  padding:18px 12px; border-radius:16px;
+  background:rgba(255,255,255,.045);
+  border:1px solid rgba(255,255,255,.10);
+}
+.stat b{
+  display:block; font-size:clamp(1.875rem,4.6vw,2.625rem); font-weight:800;
+  letter-spacing:-.025em; line-height:1.05; color:var(--gold-on-dark);
+  font-variant-numeric:tabular-nums;   /* stops the width jittering while counting */
+}
+.stat span{
+  display:block; margin-top:8px; font-size:.875rem; line-height:1.35;
+  color:rgba(255,255,255,.82);
+}
+/* Panels rise in on a stagger. Additive: without .in they are simply in place. */
+@media (prefers-reduced-motion:no-preference){
+  .js-anim.in .stat{ animation:statrise .5s var(--ease) backwards; }
+  .js-anim.in .stat:nth-child(1){ animation-delay:.04s }
+  .js-anim.in .stat:nth-child(2){ animation-delay:.12s }
+  .js-anim.in .stat:nth-child(3){ animation-delay:.20s }
+  .js-anim.in .stat:nth-child(4){ animation-delay:.28s }
+}
+@keyframes statrise{
+  from{ opacity:0; transform:translateY(10px) }
+  to{ opacity:1; transform:none }
+}
+
+/* ---- guarantee seal --------------------------------------------------
+   A SELF-ISSUED mark: it carries the firm's own promise, which the warranty
+   section defines in full directly beside it. It is not styled to imitate a
+   third-party certification and must not be — an invented credential costs
+   more trust than the decoration buys. */
+/* Heading and badge stay on one row at every width. They used to wrap, which
+   dropped the badge onto its own line where margin-left:auto stranded it against
+   the right edge with dead space above and below. The heading takes whatever is
+   left and wraps instead — a three-line heading beside the badge reads as a
+   composition; a floating badge reads as a mistake. */
+.promise-row{ display:flex; align-items:center; gap:20px; flex-wrap:nowrap; }
+.promise-row h2{ margin:0; flex:1 1 auto; min-width:0; }
+.seal{ flex:0 0 auto; width:150px; height:auto; display:block; }
+@media (max-width:719px){
+  .promise-row{ gap:14px; }
+  .seal{ width:96px; }
+}
+@media (max-width:359px){ .seal{ width:78px; } }
+
+/* ---- step cards ------------------------------------------------------
+   A large, very low-contrast icon behind each step. Texture, not information:
+   it is aria-hidden and the step still reads identically without it. */
+/* ---- step timeline ------------------------------------------------------
+   The three steps are a sequence, and nothing on the page said so — they read
+   as three unrelated paragraphs. A line joining the numbered discs states the
+   order; it draws itself in when the block scrolls into view.
+
+   NOTE: no overflow:hidden on .step. The connector deliberately extends past
+   the step's own box to reach the next disc, and clipping it was the first
+   thing that broke when this was built. */
+.step{ position:relative; }
+.step-n{ position:relative; z-index:1; }   /* discs sit above the line */
+
+.step::after{
+  content:""; position:absolute; background:var(--line-strong);
+  transform-origin:top left; pointer-events:none;
+}
+.step:last-child::after{ content:none; }
+
+/* Single column: vertical run from the bottom of one disc to the top of the next. */
+.step::after{
+  left:23px; top:52px; width:2px; bottom:-26px; transform-origin:top;
+}
+/* .js-anim is added by script. Without it — no JS, script error — the line is
+   simply drawn. The collapsed start state must never be the default, or a
+   decoration failure removes the thing it was decorating. */
+.js-anim .step::after{ transform:scaleY(0); }
+.js-anim.in .step::after{ transform:scaleY(1); }
+
+/* The watermark icons are gone at every width, not just mobile. The connector
+   crossed straight through them on desktop, and two faint decorations competing
+   in the same box reads worse than one clear one. The timeline states the
+   sequence, which is the thing this section actually needed to say. */
+.step-ico{ display:none; }
+
+@media (min-width:900px){
+  /* Three columns: the connector runs horizontally between discs, and the icon
+     goes back to the top-right corner, which is genuinely empty here. */
+  .step::after{
+    left:58px; top:23px; height:2px; width:auto; right:-34px; bottom:auto;
+    transform-origin:left;
+  }
+  .js-anim .step::after{ transform:scaleX(0); }
+  .js-anim.in .step::after{ transform:scaleX(1); }
+}
+
+/* Motion is additive: without it the line is simply drawn. */
+@media (prefers-reduced-motion:no-preference){
+  .step::after{ transition:transform .55s var(--ease); }
+  .step:nth-child(2)::after{ transition-delay:.18s; }
+  [data-animate].in .step-n{ animation:discpop .45s var(--ease) backwards; }
+  .step:nth-child(1) .step-n{ animation-delay:.02s }
+  .step:nth-child(2) .step-n{ animation-delay:.16s }
+  .step:nth-child(3) .step-n{ animation-delay:.30s }
+}
+@media (prefers-reduced-motion:reduce){
+  .js-anim .step::after, .js-anim.in .step::after{ transform:none; }
+}
+@keyframes discpop{
+  from{ opacity:0; transform:scale(.6) }
+  70%{ opacity:1; transform:scale(1.1) }
+  to{ opacity:1; transform:none }
+}
+
+/* ---- photo watermark -------------------------------------------------
+   Brands the photography and travels with the image if it is ever scraped.
+   Kept low-contrast so it never competes with the subject. */
+/* Anchored to the image, not the figure — the figure includes the caption, so
+   bottom:10px on it put the mark on the caption instead of the photo. */
+/* Scoped to .shot rather than .gal .shot: body-chapter figures use the same
+   figureHtml() and would otherwise be the one place a photo appears without
+   the mark — the same photograph watermarked in a gallery and bare in a body. */
+.shot{ position:relative; display:block; }
+.shot::after{
+  content:""; position:absolute; right:10px; bottom:10px;
+  width:74px; height:30px;
+  background:url(/img/logo-wordmark.f20152e2.png) right bottom/contain no-repeat;
+  opacity:.62; filter:drop-shadow(0 1px 2px rgba(0,0,0,.45));
+  pointer-events:none;
+}
+@media (max-width:599px){ .shot::after{ width:60px; height:24px; } }
+
+.rev-foot{ grid-column:1/-1; margin:4px 0 0; font-size:.875rem; color:var(--text-muted); }
+/* Empty state = one short sentence plus a button, so the whole band is narrow
+   content in a wide container. Centre it, and centre the section head with it —
+   :has() scopes that to the empty state only, so the moment fetch:reviews
+   returns quotes the head snaps back to left-aligned above the 3-up card grid,
+   which is where it belongs. Browsers without :has() just keep today's layout. */
+.rev-empty{ grid-column:1/-1; max-width:62ch; margin-inline:auto; text-align:center; }
+.rev-empty p{ color:var(--text-2); margin-bottom:16px; text-wrap:balance; }
+.sec:has(.rev-empty) .sec-head{ margin-inline:auto; text-align:center; }
+.sec:has(.rev-empty) .eyebrow::before{ margin-inline:auto; }
+
+/* ------------------------------------------------------------ area map */
+.areas{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px 18px; list-style:none; padding:0; margin:0; }
+.areas a{ color:var(--cyan-light); font-size:.9375rem; text-decoration:none; }
+.areas a:hover{ color:#fff; text-decoration:underline; }
+
+/* ---------------------------------------------------------------- FAQ */
+/* Same treatment as .prose: 80ch column centred in the container, answers still
+   left-aligned. The section head above it carries .center so the two agree. */
+.faqs{ max-width:80ch; margin-inline:auto; }
+.faq{ border-top:1px solid var(--line); }
+.faq:last-child{ border-bottom:1px solid var(--line); }
+.faq h3{ margin:0; font-size:1.0625rem; }
+.faq button{
+  display:flex; align-items:flex-start; gap:16px; width:100%; min-height:62px;
+  padding:18px 0; background:none; border:0; text-align:left; cursor:pointer;
+  font-size:1.0625rem; font-weight:700; line-height:1.4; color:var(--text);
+}
+.faq button:hover{ color:var(--navy); }
+.faq button:focus-visible{ outline:var(--ring-w) solid var(--ring); outline-offset:2px; border-radius:var(--r-xs); }
+.faq .chev{
+  flex:0 0 auto; margin-left:auto; width:20px; height:20px; position:relative; top:3px;
+  transition:transform var(--t) var(--ease); color:var(--text-muted);
+  background-repeat:no-repeat;
+  background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%234C5C6B' stroke-width='2.2' stroke-linecap='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+}
+.faq.open .chev{ transform:rotate(180deg); }
+.faq .ans{ overflow:hidden; max-height:0; transition:max-height var(--t) var(--ease); }
+.faq .ans-in{ padding:0 0 20px; max-width:68ch; }
+.faq .ans-in p{ font-size:1rem; color:var(--text-2); }
+.faq .ans-in p:last-child{ margin-bottom:0; }
+
+/* -------------------------------------------------------------- final */
+.final{ background:radial-gradient(120% 90% at 50% 0%,#16436B,#0C2C47); color:#fff; padding:56px 0; }
+.final h2{ color:#fff; }
+.final p{ color:var(--text-on-dark-2); }
+.final-actions{ display:flex; flex-wrap:wrap; gap:12px; margin-top:22px; }
+/* The closing CTA is a standalone short block — eyebrow, one H2, one line of
+   lead, two buttons — with nothing beside it to align to. Left-pinned it left
+   ~750px of empty navy to its right. Buttons follow the text. */
+.sec-head.center .final-actions{ justify-content:center; }
+
+/* ------------------------------------------------------------- footer */
+.ftr{ background:var(--band-dark-2); color:var(--text-on-dark-2); padding:44px 0 24px; font-size:.9375rem; }
+.ftr-grid{ display:grid; grid-template-columns:minmax(0,1fr); gap:30px; }
+.ftr h2{ color:#fff; font-size:.8125rem; letter-spacing:.09em; text-transform:uppercase; margin:0 0 14px; }
+.ftr ul{ list-style:none; margin:0; padding:0; }
+.ftr li{ margin:0 0 2px; }
+.ftr a{ color:var(--text-on-dark-2); text-decoration:none; }
+.ftr a:hover{ color:#fff; text-decoration:underline; }
+/* Footer and utility links are navigation, not inline prose, so they have to
+   clear the 24px minimum target size — padding, not font-size, gets them there. */
+.ftr li a,.ftr-legal a,.util a{ display:inline-block; padding:5px 0; min-height:24px; }
+.ftr-brand a,.bar a{ display:inline-block; padding:4px 0; min-height:24px; }
+.areas a{ display:inline-block; padding:5px 0; min-height:24px; }
+.ftr-brand img{ height:40px; width:auto; margin-bottom:14px; }
+.ftr-brand p{ font-size:.875rem; line-height:1.6; }
+.ftr-tel{ color:var(--gold-on-dark)!important; font-weight:700; font-size:1.0625rem; }
+.ftr-legal{
+  margin-top:32px; padding-top:20px; border-top:1px solid var(--line-on-dark);
+  font-size:.78125rem; line-height:1.6; display:grid; gap:12px;
+}
+.ftr-legal a{ text-decoration:underline; }
+.ftr-links{ display:flex; flex-wrap:wrap; gap:16px; }
+/* BAR compliance block — 16 CCR 3371.2. The phone number here is the number on
+   file with the Bureau and is deliberately excluded from dynamic number
+   insertion; see the .ghl-no-swap markers and the DNI note at end of body. */
+.bar{
+  margin-top:26px; padding:16px 18px; background:var(--band-dark-3);
+  border:1px solid var(--line-on-dark); border-radius:var(--r-sm);
+  font-size:.8125rem; line-height:1.6;
+}
+.bar b{ color:#fff; }
+.bar a{ color:var(--gold-on-dark); font-weight:700; }
+
+/* Trust cluster beside the registered identity. Measured on --band-dark-3
+   (#123763): #FFFFFF 11.98:1, --text-on-dark-2 7.87:1 — both clear 4.5:1 at
+   this size. The divider is decorative, so it is a white wash rather than
+   --line-on-dark, which sits at 1.15:1 against this panel and disappears. */
+/* On a phone the panel is one column, so the cluster needs the same separation
+   the desktop divider gives it — without this the first badge sat directly
+   under the address line and read as a fourth line of the address. */
+.bar{ display:grid; gap:16px; }
+.bar-trust{ display:grid; gap:12px; padding-top:16px;
+            border-top:1px solid rgba(255,255,255,.16); }
+.bt{ display:grid; grid-template-columns:auto minmax(0,1fr); gap:10px; align-items:center; }
+.bt b{ display:block; line-height:1.35; }
+.bt span{ display:block; color:var(--text-on-dark-2); font-size:.75rem; line-height:1.4; }
+.bt .rb-g{ width:18px; height:18px; flex:0 0 auto; }
+.bt-i{ color:var(--cyan-on-dark); }
+.disclaimer{ font-size:.78125rem; line-height:1.6; color:var(--text-on-dark-2); }
+
+/* --------------------------------------------------------- sticky bar */
+.sticky{
+  position:fixed; inset:auto 0 0 0; z-index:70;
+  display:grid; grid-template-columns:1.15fr 1fr; gap:10px;
+  padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+  background:rgba(255,255,255,.97); backdrop-filter:blur(12px);
+  border-top:1px solid var(--line);
+  box-shadow:0 -1px 0 rgba(11,27,43,.08),0 -8px 24px -12px rgba(11,27,43,.2);
+  transform:translateY(115%); transition:transform var(--t) var(--ease);
+  visibility:hidden;
+}
+.sticky[data-show]{ transform:translateY(0); visibility:visible; }
+.sticky .btn{ min-height:50px; font-size:1rem; padding:0 12px; }
+
+/* skip link */
+.skip{
+  position:absolute; left:-9999px; top:0; z-index:100;
+  background:var(--paper); color:var(--text); padding:12px 18px; font-weight:700;
+  border-radius:0 0 var(--r-sm) 0; box-shadow:var(--sh-lg);
+}
+.skip:focus{ left:0; }
+
+/* ============================ MEDIA QUERIES — ALWAYS LAST ============================ */
+@media (max-width:359px){
+  :root{ --gutter:16px; }
+  .util{ display:none; }
+  .rb-sub{ display:none; }
+  .qc{ padding:18px; }
+}
+@media (max-width:599px){
+  /* Phone-width util bar: short note, one line, number never reflows. */
+  .util-more{ display:none; }
+  .util .wrap{ gap:10px; }
+}
+@media (min-width:600px){
+  .qc-row-2{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .tb{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .grid-2,.grid-4{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+  /* Two columns here, so an odd card count strands the last one just as three
+     columns does. Four tracks, two per card, lone last centred. */
+  .grid-3{ grid-template-columns:repeat(4,minmax(0,1fr)); }
+  .grid-3 > *{ grid-column:span 2; }
+  .grid-3 > :last-child:nth-child(2n+1){ grid-column:2 / span 2; }
+  /* Two review columns in this band, so an odd count strands the last card.
+     Scoped to `figure` on purpose: the last child of .revs is the .rev-foot
+     attribution line, which spans the full row and must not be dealt a column
+     like a card. `:last-of-type` counts figures only, so it keeps pointing at
+     the last review no matter what trails it. */
+  .revs{ grid-template-columns:repeat(4,minmax(0,1fr)); }
+  .revs > figure{ grid-column:span 2; }
+  /* The matching orphan-centring rule is deliberately NOT here — it needs three
+     compound selectors to express "last review", which outweighs anything the
+     900px block can say back, and it would follow the layout up into desktop
+     and drag the third review onto a second row. It lives in a bounded
+     600–899px block near the end of this stylesheet instead. */
+  /* Six columns, three photos per row (span 2 each). The sixths exist purely so
+     an incomplete last row can still divide evenly — see the rules below.
+     Symmetry cannot depend on somebody remembering to add photos in threes. */
+  .gal{ grid-template-columns:repeat(6,minmax(0,1fr)); }
+  .gal figure{ grid-column:span 2; }
+  /* Last row holds one: give it the full width rather than stranding it beside
+     two empty cells. */
+  .gal figure:last-child:nth-child(3n+1){ grid-column:span 6; }
+  .gal figure:last-child:nth-child(3n+1) img{ aspect-ratio:21/9; }
+  /* Last row holds two: half each, so the row still fills. */
+  .gal figure:nth-last-child(2):nth-child(3n+1),
+  .gal figure:last-child:nth-child(3n+2){ grid-column:span 3; }
+  .callbtn .cb-num{ display:inline; }
+  .areas{ grid-template-columns:repeat(3,minmax(0,1fr)); }
+}
+@media (min-width:900px){
+  :root{ --gutter:24px; }
+  .sec{ padding:88px 0; }
+  .hero{ padding:52px 0 68px; }
+  .hero-grid{
+    grid-template-columns:minmax(0,1fr) 452px;
+    grid-template-areas:"copy form" "more form";
+    grid-template-rows:auto 1fr;
+    gap:18px 52px;
+  }
+  .qc{ padding:28px; }
+  .nav{ display:flex; }
+  .nav + .hdr-cta, .hdr-rating + .hdr-cta{ margin-left:0; }
+  .hdr-rating{ display:none; }
+  .hdr .wrap{ min-height:72px; }
+  .tb{ grid-template-columns:repeat(4,minmax(0,1fr)); }
+  /* Six tracks, two per card — the same trick the gallery uses — so an
+     incomplete last row can be centred instead of stranded. Seven service
+     cards in three columns left one card beside two empty cells, which is the
+     single most common client note on a build like this.
+
+     Unlike the gallery, a leftover card is NOT widened to fill the row. A
+     service card twice the size of its neighbours reads as the most important
+     service, and "there were seven of them" is not a reason to promote one. */
+  .grid-3{ grid-template-columns:repeat(6,minmax(0,1fr)); }
+  .grid-3 > *{ grid-column:span 2; }
+  /* Last row holds one: centre it. */
+  .grid-3 > :last-child:nth-child(3n+1){ grid-column:3 / span 2; }
+  /* Last row holds two: centre the pair. */
+  .grid-3 > :nth-last-child(2):nth-child(3n+1){ grid-column:2 / span 2; }
+  .grid-3 > :last-child:nth-child(3n+2){ grid-column:4 / span 2; }
+  /* Three reviews across in a single row. Same six-track trick, and for the
+     same reason: the Places API returns at most five reviews and the five-star
+     filter can leave two, which would otherwise sit beside an empty third cell
+     looking like a bug. Centre the short row instead. */
+  .revs{ grid-template-columns:repeat(6,minmax(0,1fr)); }
+  .revs > figure{ grid-column:span 2; }
+  .revs > figure:last-of-type:nth-child(3n+1){ grid-column:3 / span 2; }
+  .revs > figure:nth-last-of-type(2):nth-child(3n+1){ grid-column:2 / span 2; }
+  .revs > figure:last-of-type:nth-child(3n+2){ grid-column:4 / span 2; }
+  .grid-4{ grid-template-columns:repeat(4,minmax(0,1fr)); }
+  .mapgrid{ grid-template-columns:minmax(0,1.35fr) minmax(0,1fr); gap:26px; }
+  .steps{ grid-template-columns:repeat(3,minmax(0,1fr)); gap:30px; }
+  .step{ grid-template-columns:minmax(0,1fr); }
+  .ftr-grid{ grid-template-columns:1.9fr 1fr 1fr 1.2fr; gap:36px; }
+  .ftr-legal{ grid-template-columns:minmax(0,1fr) auto; align-items:center; }
+  .areas{ grid-template-columns:repeat(4,minmax(0,1fr)); }
+  .sticky{ display:none; }
+  body.has-sticky{ padding-bottom:0; }
+
+  /* The panel was one column of identity text with two thirds of its own width
+     empty. Identity left, trust right, divided. auto on the second track so the
+     badges size to their content and the identity block keeps the remainder. */
+  /* Both tracks are fractions, and the identity has a floor.
+     This was `minmax(0,1fr) auto` with the badges in a single row, which is a
+     trap: an `auto` track is sized to its max-content BEFORE any free space
+     reaches an `fr`, and four badges in a row have a max-content of ~1090px
+     against a 1132px container. The identity column was handed the remaining
+     8px and rendered the shop name one word per line, 441px tall, at every
+     width from 900px up. It reached 0px below 1100.
+
+     Two rows of two halves the cluster's demand, so both sides get a real
+     column and the "identity left, trust right, divided" arrangement survives.
+     Do not put these badges back on one row without checking the max-content
+     against the wrap width first — this failure is silent and total. */
+  .bar{ display:grid; grid-template-columns:minmax(240px,1fr) minmax(0,1.5fr);
+        gap:32px; align-items:center; padding:18px 22px; }
+  .bar-trust{ grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px 26px;
+              padding:0 0 0 30px; border-top:0;
+              border-left:1px solid rgba(255,255,255,.16); }
+
+  /* -------------------------------------------------- body chapters
+     Every chapter is CENTRED as a unit. What varies is the width of the unit.
+
+       .pchap       the reading column alone, 56ch, centred -> equal margins
+       .pchap-fig   the reading column plus a figure rail, centred as a pair
+
+     The margins are the point. A text-only chapter with balanced space either
+     side reads as a deliberate column; the same chapter flush left with all of
+     its whitespace piled on one side reads as content that failed to load. Both
+     were tried here and the second one is what the client flagged.
+
+     What was actually broken was ALTERNATION. Illustrated chapters used to swap
+     the photo left and right down the page, which moved the prose between 253
+     and 689 while text-only chapters sat at 471 — so a page whose figures were
+     not evenly spaced zigzagged, and it read as text that would not sit still.
+     The reference build has the same rule and gets away with it only because it
+     has three chapters in an order where the offsets happen to descend.
+
+     Alternation is gone. The figure is always in the right-hand rail, so the
+     prose sits at exactly two positions: 253 when illustrated, 471 when not,
+     each of them balanced. Do not reintroduce the swap to "add rhythm" — a
+     rhythm you can only see when every chapter is illustrated is not a rhythm,
+     and most chapters on a real client site have no photo at all.
+
+     The prose column stays at 56ch. That figure is measured, not chosen — 72ch
+     rendered 96 characters per line — so filling the container has to come from
+     what sits BESIDE the text, never from widening it. */
+  .chaps{ gap:64px; }
+  .pchap-fig{
+    /* Ratio tracks inside a capped width, not two max-widths. With
+       minmax(0,380px) each track sized to its own CONTENT, so a chapter whose
+       caption happened to be short gave the photo 282px and the prose 596 —
+       every illustrated chapter came out a different shape. fr keeps the
+       proportion and scales the pair down at 900px instead of overflowing. */
+    max-width:934px; margin-inline:auto;
+    display:grid; grid-template-columns:498fr 380fr;
+    /* Figure always in the right rail. Heading and prose stack against it in
+       the left column. Areas rather than source order: the three are siblings
+       precisely so a phone gets heading -> photo -> text from source order. */
+    /* Two 1fr spacer rows, one above the heading and one below the prose, so
+       when the photo is taller than the text the slack is split evenly instead
+       of dumped underneath it. This was `auto 1fr`, which gave the whole
+       surplus to the prose row; with align-items:start that pinned the text to
+       the top and left 211px, 260px and 341px of dead rail below it on three of
+       the four chapters. The heading and prose keep their own auto rows, so
+       they stay tight to each other — the slack never opens between them.
+       When the text is TALLER than the photo the 1fr rows collapse to zero and
+       nothing moves, which is the "what we handle" chapter and why the figure
+       below is sticky rather than centred. */
+    grid-template-areas:". fig" "head fig" "prose fig" ". fig";
+    grid-template-rows:1fr auto auto 1fr;
+    /* Column gap only. `gap:56px` would also open 56px between the heading row
+       and the prose row, which reads as a missing paragraph — the h2's own 12px
+       bottom margin is the spacing that belongs there. */
+    gap:0 56px; align-items:start;
+  }
+  /* Alternate side. Only defensible because the generator now illustrates every
+     chapter — see proseHtml. With a mix of illustrated and bare chapters this
+     read as text that would not sit still. */
+  .pchap-alt{ grid-template-columns:380fr 498fr;
+              grid-template-areas:"fig ." "fig head" "fig prose" "fig ."; }
+  .pchap-fig > h2{ grid-area:head; }
+  /* Sticky, not centred. A chapter's prose is routinely three times the height
+     of the photo beside it — the "what we handle" chapter is a bullet list plus
+     a full callout — and centring left the photo marooned in a tall empty rail
+     with several hundred pixels of nothing above and below it. That is what the
+     client saw and reported.
+     Sticky turns that dead rail into the photo tracking the reader down the
+     chapter, which is a deliberate editorial pattern rather than a gap. It is
+     self-limiting: on a chapter no taller than its photo the element never
+     unsticks, so short chapters look exactly as they did.
+     align-self:start is REQUIRED — sticky does nothing inside a stretched or
+     centred grid item, because the item has no free space to move within.
+     top clears the sticky header (72px) plus a breathing gap. */
+  .pchap-fig > figure{
+    grid-area:fig; align-self:start; position:sticky; top:96px; margin:0;
+  }
+  .pchap-fig > .prose{ grid-area:prose; max-width:none; }
+  /* Portraits otherwise ran to their natural height and towered over the text
+     they illustrate — the 440x900 driveway shot was twice the height of its own
+     two paragraphs. Cropping to a cap keeps every chapter in proportion
+     whichever orientation the client's photo happens to be. */
+  /* 620, raised from 470. The original cap existed because portraits ran to
+     their natural height and towered over short chapters — but the fill is
+     orientation-aware now and sends portraits to the LONGEST chapters, where
+     the opposite was true and the rail sat half empty. Landscapes render about
+     333px at this column width, well under the cap, so raising it only affects
+     the portraits that were deliberately placed beside long prose. */
+  /* --fig-img-h is set per figure by the generator, from the length of the text
+     that chapter carries; 620 is the fallback when it decides no crop is worth
+     it. Consumed only inside this block, so the one-column phone layout below
+     900px keeps its own 340px cap and is unaffected. */
+  .pchap-fig img{ max-height:var(--fig-img-h, 620px); object-fit:cover; }
+  /* Text-only chapters: the same 56ch measure, centred, so both kinds of
+     chapter carry balanced margins and neither reads as half-empty.
+
+     The column is on the GRID, not on the children. `max-width:56ch` set on the
+     heading resolves against the heading's own font — 1170px at this size, so
+     it constrained nothing and the h2 ran the full width while its paragraphs
+     sat centred beneath it. ch is a property of the element you put it on. */
+  /* A chapter with no photo keeps the SAME block — same width, same left edge,
+     text in the same column an alternated chapter uses. It was centred in the
+     container before, which gave the section two different outer widths and
+     read as a layout that could not decide. bodyPhotoFill means this is now
+     rare, but rare is exactly when an inconsistency is most jarring.
+
+     :not(), not source order. .pchap and .pchap-fig have equal specificity, so
+     whichever is written second wins — and this one was, which quietly replaced
+     the two-column illustrated grid with a single column plus an implicit auto
+     track. The exclusion says what is meant and cannot be undone by moving a
+     block. */
+  /* Fallback for a client whose photo pool is smaller than its chapter count.
+     Same 934px block and same 56ch column as an illustrated chapter, so the
+     section keeps ONE outer edge either way — it just has empty rail instead of
+     a photo. It must not re-centre itself at a different width; that is the
+     mismatch this whole block exists to prevent. */
+  .pchap:not(.pchap-fig){ max-width:934px; margin-inline:auto;
+                          display:grid; grid-template-columns:minmax(0,56ch); }
+  .pchap:not(.pchap-fig) > .prose{ max-width:none; }
+}
+/* Tablet: the card stretches to the full container because the rule pinning it
+   to a column is behind min-width:900px. Functional, but the highest-value
+   element on the page reads as a stretched desktop form. */
+@media (min-width:600px) and (max-width:899px){
+  /* Two review columns in this band, so an odd count strands the last card.
+     Centre it. Bounded on purpose — see the note in the 600px block. */
+  .revs > figure:last-of-type:nth-child(2n+1){ grid-column:2 / span 2; }
+  .qc{ max-width:560px; margin-inline:auto; }
+}
+
+@media (max-width:899px){
+  body.has-sticky{ padding-bottom:74px; }
+
+  /* Touch targets. These rules sit here rather than beside their components
+     because the 24px baseline at .ftr li a / .areas a / .ftr-brand a is set
+     further up and has equal specificity — only source order separates them. */
+
+  /* Util call: the bar's only tap target, and a primary conversion path. 40px
+     is the most the bar can give without costing above-the-fold height. */
+  .util .wrap{ min-height:40px; padding-block:0; }
+  .util a{ padding:9px 0; min-height:40px; }
+
+  /* Area lists: the row gap is absorbed into the links themselves, so each
+     target goes 34px -> 44px with no change to the block's overall height.
+     display:block widens the short names ("Irvine" was 37px) to the grid cell
+     without moving the text, which stays left-aligned. */
+  /* Separation matters as much as size. Absorbing the whole row gap into the
+     link box hit 44px but left adjacent targets touching at 0px, so a thumb on
+     the boundary is a coin flip between two destinations. Keep 44px and give
+     the gap back. */
+  .areas{ row-gap:8px; }
+  .areas a{ display:block; padding:8px 0; min-height:44px; }
+
+  /* Legal row at the very bottom. Padding is horizontal too: "Terms" and
+     "Home" were only 34px and 33px wide. */
+  .ftr-legal a{ padding:10px 8px; margin-inline:-8px; min-height:44px; }
+
+  /* Footer nav: 44px box AND 8px between boxes. */
+  .ftr li{ margin:0 0 8px; }
+  .ftr li a{ padding:8px 0; min-height:44px; }
+
+  /* The BAR-registered number. A tel: link, a conversion path, and the one
+     number a cautious buyer taps to check the business is real — it was still
+     on the 24px baseline at 28.8px. */
+  .bar a{ padding:10px 0; min-height:44px; }
+
+  /* Footer phone/email — conversion links, not prose. */
+  .ftr-brand a{ padding:10px 0; min-height:44px; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#quote">Skip to quote form</a>
+
+<div class="util">
+  <div class="wrap">
+    <!-- .util-more is dropped under 600px: the full sentence needs two lines on a
+         phone, and the second line is what used to push the phone number into a
+         mid-number break. The short form still says mobile + we come to you. -->
+    <span class="util-note">Mobile only — the van comes to you<span class="util-more"> anywhere from Miami to Naples</span></span>
+    <span class="util-call"><span class="util-call-lbl">Call</span> <a href="tel:+13059513295">(305) 951-3295</a></span>
+  </div>
+</div>
+
+<header class="hdr" id="top">
+  <div class="wrap">
+    <!-- logo links to "/" not "#top": on a sub-page an anchor just scrolls up,
+         leaving an ad visitor with no route to the home page -->
+    <a class="brand" href="/" aria-label="Maximum Glass Corp — home">
+      <img src="/img/logo-wordmark.f20152e2.png" width="234" height="96" alt="Maximum Glass Corp" fetchpriority="high" decoding="async">
+    </a>
+    <nav class="nav" aria-label="Services and areas"><!--PAGE:NAV--><a href="/windshield-replacement">Windshields</a>
+            <a href="/windshield-repair">Chip repair</a>
+            <a href="/auto-glass-repair-southeast-florida">Southeast FL</a>
+            <a href="/auto-glass-repair-southwest-florida">Southwest FL</a><!--/PAGE:NAV--></nav>
+    <!-- Removed entirely, not left empty, when there is no review data:
+         see reviewsSectionHtml() and section() in build-pages.cjs. -->
+    
+    <div class="hdr-cta">
+      <a class="callbtn" href="tel:+13059513295" aria-label="Call Maximum Glass Corp at (305) 951-3295">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.7a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2Z"/></svg>
+        <span class="cb-num">(305) 951-3295</span><span class="sr-only">Call us</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow"><!--PAGE:EYEBROW-->South Florida · Mobile auto glass<!--/PAGE:EYEBROW--></span>
+        <h1><!--PAGE:H1-->Auto glass replacement that comes to your driveway<!--/PAGE:H1--></h1>
+        <div class="hero-sub"><!--PAGE:SUB--><p>A cracked windshield means rearranging your day around a shop<span class="sub-more"> — unless the shop is a van that meets your car wherever it is parked</span>.</p><!--/PAGE:SUB--></div>
+
+        <div class="rb"><!--PAGE:RATINGBAR--><a class="rb-item rb-link" href="" target="_blank" rel="noopener"><svg class="rb-g" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg><strong>Read our Google reviews</strong></a><!--/PAGE:RATINGBAR--></div>
+
+      </div>
+
+      <div class="hero-more">
+        <ul class="hero-bul"><!--PAGE:HEROBULLETS--><li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Mobile only, by design</strong> &mdash; the van comes to your driveway, office or job site anywhere in our seven-county footprint</span></li>
+          <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Same-day scheduling</strong> when your glass is in stock &mdash; most common windshields are</span></li>
+          <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Lifetime workmanship warranty</strong> against water leaks and air noise, defined in full further down this page</span></li>
+          <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Insurance claims handled</strong> &mdash; we set up the claim and bill your carrier directly, and Florida law waives the windshield deductible under comprehensive cover</span></li><!--/PAGE:HEROBULLETS--></ul>
+
+        <div class="hero-actions">
+          <a class="btn btn-call" href="tel:+13059513295">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.7a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2Z"/></svg>
+            Call (305) 951-3295
+          </a>
+        </div>
+      </div>
+
+      <!-- ============ QUOTE FORM ============ -->
+      <div class="qc hero-form" id="quote">
+        <!-- method="post" and onsubmit="return false" are both deliberate, and they
+             cover two different failures. The fields carry name= attributes, so a
+             default browser submit would otherwise be a GET that reloads this page
+             with name, phone and email in the query string — losing the lead AND
+             putting PII in the URL, in history, in the Referer of the next click,
+             and into Google Ads via gtag's page_location. That is a policy problem,
+             not just an ugly URL.
+               - onsubmit="return false" is parsed with the markup, so it holds if
+                 the script below throws before the submit handler binds.
+               - It cannot help when JS is switched off entirely, because it is
+                 itself JS. method="post" covers that case: a POST never puts
+                 fields in the URL. The <noscript> below sends those visitors to
+                 the phone, which is where they need to go anyway. -->
+        <form id="quoteForm" novalidate method="post" onsubmit="return false">
+          <h2 class="qc-h">Get your free quote</h2>
+          <p class="qc-sub">Takes about 30 seconds. We'll confirm your glass and your coverage before anyone is dispatched.</p>
+
+          <!-- Without JS the form cannot deliver, so say so rather than letting
+               someone fill in six fields and lose them. -->
+          <noscript>
+            <p class="qc-noscript">This form needs JavaScript to send. Call
+              <a href="tel:+13059513295">(305) 951-3295</a> and we'll take the details
+              over the phone.</p>
+          </noscript>
+
+          <div class="qc-row qc-row-2">
+            <div class="field">
+              <label class="label" for="nm">Full name<span class="req" aria-hidden="true">*</span></label>
+              <input class="input" id="nm" name="name" type="text" autocomplete="name" required placeholder="Alex Ramirez">
+              <p class="err" id="nm-err"></p>
+            </div>
+            <div class="field">
+              <label class="label" for="ph">Mobile phone<span class="req" aria-hidden="true">*</span></label>
+              <input class="input" id="ph" name="phone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="(714) 555-0142">
+              <p class="err" id="ph-err"></p>
+            </div>
+          </div>
+
+          <div class="qc-row qc-row-2">
+            <div class="field">
+              <label class="label" for="em">Email<span class="req" aria-hidden="true">*</span></label>
+              <input class="input" id="em" name="email" type="email" inputmode="email" autocomplete="email" required placeholder="you@example.com">
+              <p class="err" id="em-err"></p>
+            </div>
+            <div class="field">
+              <label class="label" for="zip">Service ZIP<span class="req" aria-hidden="true">*</span></label>
+              <input class="input" id="zip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" maxlength="5" required placeholder="92614">
+              <p class="err" id="zip-err"></p>
+            </div>
+          </div>
+
+          <!-- Service and vehicle are required, so they live in the always-visible
+               part of the form. A required field inside a collapsed drawer is a
+               trap: you press submit, and the error is on something you cannot
+               see. Costs one extra row; the drawer keeps VIN and insurance. -->
+          <div class="qc-row qc-row-2">
+            <div class="field">
+              <label class="label" for="svc">What do you need?<span class="req" aria-hidden="true">*</span></label>
+              <select class="input" id="svc" name="service">
+                <option value="windshield-replacement" selected>Windshield replacement</option>
+                <option value="chip-crack-repair">Windshield chip or crack repair</option>
+                <option value="back-glass">Back glass / rear window</option>
+                <option value="door-side-glass">Door or side window glass</option>
+                <option value="adas-calibration">ADAS camera recalibration</option>
+                <option value="not-sure">Not sure — help me work it out</option>
+              </select>
+              <p class="err" id="svc-err"></p>
+            </div>
+            <div class="field">
+              <label class="label" for="veh">Vehicle<span class="req" aria-hidden="true">*</span></label>
+              <input class="input" id="veh" name="vehicle" type="text" autocomplete="off" placeholder="2021 Toyota RAV4">
+              <p class="err" id="veh-err"></p>
+            </div>
+          </div>
+
+          <!-- Honeypot. Scripted submitters that render the page fill every
+               input they find; a real person never sees this one.
+
+               It was `name="company"` with a visible-to-autofill
+               <label>Company</label>, positioned off-screen rather than
+               display:none — on the reasoning that display:none is the first
+               thing a bot checks for. That reasoning is sound about bots and
+               was catastrophic about browsers: Chrome's address-profile
+               autofill SKIPS display:none and visibility:hidden, but fills an
+               off-screen field happily, and "company" with that label is
+               exactly what it looks for. autocomplete="off" does not stop it —
+               Chrome ignores that for profile fields.
+
+               So any visitor with a company saved in their Chrome profile who
+               used autofill tripped the trap: no lead POSTed, no conversion
+               reported, and — by design, so bots learn nothing — the success
+               screen shown anyway. A paid click, a customer who believes they
+               have booked, and nothing in the CRM.
+
+               Now: no label, a name no autofill heuristic recognises, and
+               display:none, which is the only reliable way to keep Chrome out
+               of it. Naive fill-everything bots are still caught, and anything
+               clever enough to skip display:none is caught by the trusted-
+               interaction check instead — which is the stronger signal of the
+               two and has no false-positive mode.
+
+               Not a defence against a direct POST to the webhook; nothing on
+               the page can be. -->
+          <div class="hp" aria-hidden="true">
+            <input id="hp_check" name="hp_check" type="text" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div style="margin-top:16px">
+            <button type="button" class="qc-more-btn" id="qcExpand" aria-expanded="false" aria-controls="qcMore">
+              <span>
+                <span class="qc-more-t">Speed up my quote <span class="opt">(optional)</span></span><br>
+                <span class="qc-more-s">Add your VIN and insurance for an exact price</span>
+              </span>
+              <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+
+            <div id="qcMore" hidden>
+              <div class="field">
+                <label class="label" for="vin">VIN <span class="opt">— optional, gets us the exact glass</span></label>
+                <input class="input" id="vin" name="vin" type="text" maxlength="17" autocapitalize="characters" spellcheck="false" placeholder="JTMRFREV7HD000000">
+                <p class="hint" id="vinHint" style="display:none"></p>
+              </div>
+              <fieldset class="radios">
+                <legend>Filing through insurance?</legend>
+                <label class="radio"><input type="radio" name="insurance" id="ins-y" value="yes"> Yes</label>
+                <label class="radio"><input type="radio" name="insurance" id="ins-n" value="no"> Self-pay</label>
+                <label class="radio"><input type="radio" name="insurance" id="ins-u" value="not-sure" checked> Not sure yet</label>
+              </fieldset>
+              <div class="field" id="carrierField" hidden>
+                <label class="label" for="carrier">Your carrier</label>
+                <select class="input" id="carrier" name="carrier">
+                  <option value="">Select your carrier</option>
+                  <option>State Farm</option><option>GEICO</option><option>Progressive</option>
+                  <option>AAA</option><option>USAA</option><option>Farmers</option>
+                  <option>Allstate</option><option>Mercury</option><option>Other</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-error" id="quoteError" role="alert"></div>
+          <button type="submit" class="btn btn-primary qc-submit">
+            <span class="btn-label">Get my free quote</span>
+          </button>
+          <p class="qc-micro">No obligation · We confirm your coverage before dispatch</p>
+          <p class="qc-consent">By submitting this form you agree we may contact you by phone, text or email about your quote. Message rates may apply. See our <a href="/privacy">Privacy Policy</a>.</p>
+          <p class="sr-only" role="status" aria-live="polite" id="qcStatus"></p>
+        </form>
+
+        <div class="qc-ok" id="quoteSuccess" role="status" aria-live="polite">
+          <div class="qc-ok-i">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+          </div>
+          <h3 tabindex="-1" id="okHead">You're all set, <span id="echoName">there</span>.</h3>
+          <p>We've got your request. A Maximum Glass tech will call you shortly to confirm the glass, your coverage and a time that works.</p>
+          <p style="margin-top:16px"><a class="btn btn-primary btn-block" href="tel:+13059513295">Call us now — (305) 951-3295</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tb"><!--PAGE:TRUST--><div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13"/><path d="M16 8h4l3 3v5h-7V8Z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg><div><b>Mobile only, on purpose</b><span>No shop to drive to — the van carries the job to you</span></div></div>
+      <div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 4 6v6c0 5 3.4 9.3 8 10 4.6-.7 8-5 8-10V6l-8-4Z"/></svg><div><b>Lifetime workmanship warranty</b><span>Water leaks and air noise, for as long as you own the vehicle</span></div></div>
+      <div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6Z"/><path d="M14 2v6h6"/><path d="M9 15h6"/></svg><div><b>Insurance billing handled</b><span>We set up the claim and bill your carrier directly</span></div></div>
+      <div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="8"/><path d="M12 1v3m0 16v3M1 12h3m16 0h3"/></svg><div><b>ADAS recalibration</b><span>Camera systems reset on site after windshield work</span></div></div><!--/PAGE:TRUST--></div>
+  </div>
+</section>
+
+<!-- ============ PER-PAGE BODY ============ -->
+<section class="sec sec-1">
+  <div class="wrap">
+    <!-- No .prose wrapper here: the generator emits one .prose per chapter, and
+         wrapping the chapter grid in a 56ch box crushes every column inside it. -->
+    <!--PAGE:BODY--><div class="chaps"><div class="pchap pchap-fig"><h2>A mobile glass shop, not a shop with a van</h2><figure><span class="shot"><img src="/img/van-glass-clean.68202506.webp" width="1000" height="563" alt="Technician cleaning the new windshield beside the branded Maximum Glass van" loading="lazy" decoding="async"></span><figcaption>Final wipe-down happens after the trim is back on, so nothing gets pushed across bare glass.</figcaption></figure><div class="prose"><p>Maximum Glass has run mobile-only since 2018. There is no waiting room because
+there is no building to wait in: the van carries the glass rack, the urethane,
+the trim tools and the vacuum, and the job happens where your car already sits —
+a driveway in Pembroke Pines, an office lot in Brickell, a job site off the
+Palmetto. You keep your morning; the windshield gets done anyway.</p>
+</div></div>
+      <div class="pchap pchap-fig pchap-alt"><h2>What one visit covers</h2><figure><span class="shot"><img src="/img/urethane-bead.74504d6c.webp" width="750" height="1000" alt="Technician running a urethane bead along the windshield aperture with a powered gun" loading="lazy" decoding="async"></span><figcaption>A continuous urethane bead, one pass — stops and starts are where leaks begin.</figcaption></figure><div class="prose"><ul>
+  <li><strong><a href="/windshield-replacement">Windshield replacement</a></strong> — cut-out, full prep, new glass, and the safe drive-away time in writing</li>
+  <li><strong><a href="/windshield-repair">Chip and crack repair</a></strong> — resin injection that stops damage spreading, when the damage qualifies</li>
+  <li><strong><a href="/car-window-replacement">Door and side glass</a></strong> — tempered glass replaced and the door vacuumed of every shard</li>
+  <li><strong><a href="/back-glass-repair">Back glass</a></strong> — heated rear windows replaced with the defroster connections remade</li>
+  <li><strong><a href="/adas-calibration">ADAS recalibration</a></strong> — the camera behind your new windshield reset to see the road straight</li>
+</ul>
+
+<div class="callout">
+  <h3>Is the windshield really no-cost in Florida?</h3>
+  <p>Sometimes — and the qualifier matters. Florida law (FS 627.7288) stops your
+  insurer applying a deductible to windshield repair or replacement, but only if
+  you carry comprehensive coverage, and only for the windshield itself. Door and
+  back glass carry your normal deductible, and liability-only policies get no
+  glass benefit at all. Tell us your coverage when you call and we will tell you
+  plainly which case you are in before anything is booked.</p>
+</div>
+</div></div>
+      <div class="pchap pchap-fig"><h2>Why drivers pick the van over the chains</h2><figure><span class="shot"><img src="/img/van-side-job.761aa3c7.webp" width="1000" height="563" alt="Maximum Glass service van with phone number and QR code parked at a mobile job" loading="lazy" decoding="async"></span><figcaption>The van carries the number on the door — the crew that quotes you is the crew that shows up.</figcaption></figure><div class="prose"><p>The person who quotes your job is the person who turns up to do it — one
+crew, not a call center and a subcontractor. The work carries a lifetime
+workmanship warranty against water leaks and air noise for as long as you own
+the vehicle. And because the van comes to you, the usual reason to put off a
+cracked windshield — losing half a day to a shop visit — is gone.</p></div></div></div><!--/PAGE:BODY-->
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">What we do</span>
+      <h2>Every piece of glass on the vehicle</h2>
+      <p class="lead">One crew, one visit: windshields, chips, door and back glass, and the camera recalibration that modern windshields require.</p>
+    </div>
+    <!-- Generated from the services array, so a renamed slug cannot leave a
+         dead link on the most-clicked block of the home page. -->
+    <div class="grid grid-3"><!--PAGE:SERVICECARDS--><a class="card" href="/windshield-replacement"><div class="card-i"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17 5 8a2 2 0 0 1 2-1.6h10A2 2 0 0 1 19 8l2 9"/><path d="M2 17h20"/></svg></div><h3>Windshield replacement</h3><p>Cracked or shattered glass out, new glass in, at your driveway or workplace — with the safe drive-away time in writing.</p><span class="card-link">See windshield replacement →</span></a>
+      <a class="card" href="/windshield-repair"><div class="card-i"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 2.5 5 5.5.8-4 3.9.9 5.5L12 15.6 7.1 18.2l.9-5.5-4-3.9L9.5 8Z"/></svg></div><h3>Chip &amp; crack repair</h3><p>Resin injection that stops a chip becoming a crack — a fraction of the cost of new glass, done at your kerb.</p><span class="card-link">See chip repair →</span></a>
+      <a class="card" href="/car-window-replacement"><div class="card-i"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M12 4v16"/></svg></div><h3>Door &amp; side windows</h3><p>Smashed side glass replaced, the door cavity vacuumed shard-free, and the window running its full travel again.</p><span class="card-link">See window replacement →</span></a>
+      <a class="card" href="/back-glass-repair"><div class="card-i"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 19V10"/></svg></div><h3>Back glass</h3><p>Rear windows replaced with defroster lines reconnected and the cargo area cleared of every pellet of glass.</p><span class="card-link">See back glass →</span></a>
+      <a class="card" href="/adas-calibration"><div class="card-i"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="8"/><path d="M12 1v3m0 16v3M1 12h3m16 0h3"/></svg></div><h3>ADAS recalibration</h3><p>Lane-keep and emergency-braking cameras recalibrated after glass work, so the safety systems aim true.</p><span class="card-link">See ADAS calibration →</span></a>
+      <a class="card" href="/mobile-service"><div class="card-i"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13"/><path d="M16 8h4l3 3v5h-7V8Z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div><h3>Mobile service</h3><p>Home, office, gym or roadside — the van is the shop, and it parks where your day already is.</p><span class="card-link">How mobile works →</span></a><!--/PAGE:SERVICECARDS--></div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="sec sec-2">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">How it works</span>
+      <h2>Three steps, no shop visit</h2>
+    </div>
+    <div class="steps" data-animate>
+      <div class="step">
+        <svg class="step-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+        <div class="step-n">1</div>
+        <div>
+          <h3>Tell us what broke</h3>
+          <p>Send the form or call. Your VIN or plate gets us the exact glass for your vehicle, including whether it carries a camera, rain sensor or heating element.</p>
+        </div>
+      </div>
+      <div class="step">
+        <svg class="step-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 4 6v6c0 5 3.4 9.3 8 10 4.6-.7 8-5 8-10V6l-8-4Z"/><path d="M8.6 12.2l2.4 2.4 4.4-4.6"/></svg>
+        <div class="step-n">2</div>
+        <div>
+          <h3>We check your coverage first</h3>
+          <p>Before anyone is dispatched we confirm what your policy covers and what your deductible actually is, so the price you hear is the price you pay. No claim is filed until you say go.</p>
+        </div>
+      </div>
+      <div class="step">
+        <svg class="step-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13"/><path d="M16 8h4l3 3v5h-7V8Z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        <div class="step-n">3</div>
+        <div>
+          <h3>We come to you</h3>
+          <p>Your driveway, your office lot, your job site — at no extra charge. We fit the glass, recalibrate the camera if there is one, and tell you when it's safe to drive.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stat band. Every figure is derived from real data in the generator, never
+     authored here — the review numbers vanish entirely without reviews.json. -->
+<section class="statband">
+  <div class="wrap">
+    <div class="stats" data-animate><!--PAGE:STATS--><div class="stat"><b data-count="8">8</b><span>years in business</span></div>
+        <div class="stat"><b data-count="5">5</b><span>cities covered</span></div><!--/PAGE:STATS--></div>
+  </div>
+</section>
+
+<!-- ============ COMPLIANCE / MONEY QUESTIONS ============
+     Every card in here is a legal or pricing claim, which makes it the highest
+     risk copy on the page. It lives in cfg.insurance so the statutes cited can
+     be swapped per state without touching the template, and the generator drops
+     the whole band when no cards are configured. -->
+
+<section class="sec sec-warm">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Insurance</span>
+      <h2>What Florida drivers actually pay for auto glass</h2>
+      <p class="lead">Florida's glass rules are unusual, and half of what customers have heard about them is out of date. Here is the current version, statutes named.</p>
+    </div>
+    <div class="grid grid-2"><!--PAGE:INSURANCE--><div class="card"><h3>The windshield deductible rule is real — and specific</h3><p>Florida Statute 627.7288 says that if you carry comprehensive coverage on a private passenger vehicle, your insurer cannot apply a deductible to windshield repair or replacement. That is the insurer's obligation, not a shop discount. It covers the windshield only — not door, vent, quarter or back glass — and it does not apply if you carry liability-only cover.</p></div>
+      <div class="card"><h3>Door and back glass work differently</h3><p>Every other piece of glass on the vehicle falls under your normal comprehensive deductible. If the deductible is higher than the cost of the work, paying cash is simply cheaper — we will tell you which side of that line your job lands on before anything is booked.</p></div>
+      <div class="card"><h3>The gift-card pitch is now illegal here</h3><p>Florida's 2023 auto glass law (SB 1002) prohibits offering gift cards, cash or any incentive in exchange for a windshield insurance claim, and ended assignment-of-benefits for glass work. A shop still making that offer is telling you something about how it operates. We do not, and never did.</p></div>
+      <div class="card"><h3>No comprehensive cover? That is common</h3><p>Plenty of South Florida drivers carry liability only. You get the same visit, the same glass options quoted for your exact VIN, and a written figure before we book — nothing is priced on this site because no honest number exists before we know the vehicle and the glass.</p></div><!--/PAGE:INSURANCE--></div>
+    <p class="disclaimer" style="color:var(--text-muted);margin-top:22px">Maximum Glass Corp is an independent shop. We are not affiliated with, endorsed by or preferred by any insurance carrier; we bill carriers directly as a service to our customers.</p>
+  </div>
+</section>
+
+
+<!-- ============ GALLERY ============ -->
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">On the job</span>
+      <h2>Real vehicles, real driveways</h2>
+    </div>
+    <div class="gal"><!--PAGE:GALLERY--><figure><span class="shot"><img src="/img/van-arrival.7693e5a9.webp" width="1000" height="750" alt="Maximum Glass service van parked beside a blue BMW M2 in a residential driveway" loading="lazy" decoding="async"></span><figcaption>The whole shop is in the van — glass rack, urethane, trim tools and the vacuum for the cleanup.</figcaption></figure>
+        <figure style="--fig-img-h:1px"><span class="shot"><img src="/img/glass-set-wide.1e7b77e1.webp" width="1000" height="563" alt="Technician setting a windshield on a blue BMW M2 convertible next to the Maximum Glass van" loading="lazy" decoding="async"></span><figcaption>Setting glass on a soft-top: alignment gets one attempt once the urethane bead touches.</figcaption></figure>
+        <figure style="--fig-img-h:2px"><span class="shot"><img src="/img/van-driveway-wide.0d25aec9.webp" width="1000" height="563" alt="Maximum Glass van and technician working on a customer's BMW in a driveway under palm trees" loading="lazy" decoding="async"></span><figcaption>A driveway is a better work bay than most shops — flat, shaded and nobody waiting on a bench.</figcaption></figure>
+        <figure style="--fig-img-h:3px"><span class="shot"><img src="/img/hood-wipe.109cc075.webp" width="1000" height="563" alt="Technician wiping down the hood of a blue BMW beside the Maximum Glass service van" loading="lazy" decoding="async"></span><figcaption>Fender and hood covers come off last — glass dust ends up in the vacuum, not your cowl.</figcaption></figure>
+        <figure style="--fig-img-h:4px"><span class="shot"><img src="/img/van-cowl-work.fe26ba69.webp" width="1000" height="563" alt="Technician working at the cowl of a blue BMW with the Maximum Glass van behind" loading="lazy" decoding="async"></span><figcaption>Cowl panel and wiper arms come off before the cut-out — pushing trim around glass is how scratches happen.</figcaption></figure>
+        <figure style="--fig-img-h:5px"><span class="shot"><img src="/img/suction-set.880f4db1.webp" width="1000" height="563" alt="Technician pressing a new windshield into place with suction cups on a blue BMW" loading="lazy" decoding="async"></span><figcaption>Suction handles carry the glass in level, so the moulding seats evenly on the first pass.</figcaption></figure><!--/PAGE:GALLERY--></div>
+  </div>
+</section>
+
+
+<!-- ============ REVIEWS ============ -->
+<section class="sec sec-2">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Reviews</span>
+      <h2>What customers say</h2>
+    </div>
+    <div class="revs"><!--PAGE:REVIEWS--><div class="rev-empty"><p>Maximum Glass Corp has been serving South Florida drivers since 2018. Every review on our Google listing is from a real customer — read them yourself:</p><a class="btn btn-ghost" href="" target="_blank" rel="noopener">See our reviews on Google</a></div><!--/PAGE:REVIEWS--></div>
+  </div>
+</section>
+
+<!-- ============ GOOGLE LISTING + MAP ============ -->
+<section class="sec">
+  <div class="wrap">
+    <!--PAGE:MAPBLOCK--><div class="sec-head center"><span class="eyebrow eyebrow-g"><svg class="rb-g" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>Verified on Google</span><h2>Our Google listing</h2><p class="lead">The pin is our registered address in Hialeah — there is no walk-in shop. Maximum Glass is mobile only: the work happens at your driveway, office or job site.</p></div><div class="mapgrid"><div class="mapframe"><iframe src="https://maps.google.com/maps?q=400%20W%2029th%20Pl%20%23110%2C%20Hialeah%2C%20FL%2033012&amp;z=15&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map showing Maximum Glass in Hialeah, FL"></iframe></div><div class="mapinfo"><dl><div><dt>Registered address</dt><dd>400 W 29th Pl #110<br>Hialeah, FL 33012</dd></div><div><dt>Service area</dt><dd>Southeast Florida &amp; the Southwest Gulf Coast — mobile only</dd></div><div><dt>Hours</dt><dd>Mon–Fri 7:30am–5:00pm · Sat 7:30am–5:00pm · Sun closed</dd></div></dl></div></div><!--/PAGE:MAPBLOCK-->
+  </div>
+</section>
+
+<!-- ============ SERVICE AREA ============ -->
+<section class="sec sec-dark">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Where we go</span>
+      <h2>Southeast Florida &amp; the Southwest Gulf Coast coverage</h2>
+      <p class="lead" style="color:var(--text-on-dark-2)">The van covers seven counties — Miami-Dade, Broward, Palm Beach and Monroe on the east coast, Lee, Collier and Charlotte on the west. If your city is not named below, call: the answer is usually yes, and it is always a straight yes or no.</p>
+    </div>
+    <div class="grid grid-2">
+      <div>
+        <h3 style="font-size:1rem;margin-bottom:14px">Southeast Florida</h3>
+        <ul class="areas"><!--PAGE:FOOTER_AREA_A--><li><a href="/auto-glass-repair-southeast-florida">All of Southeast Florida</a></li>
+              <li><a href="/auto-glass-repair-miami-fl">Miami</a></li>
+              <li><a href="/auto-glass-repair-hialeah-fl">Hialeah</a></li>
+              <li><a href="/auto-glass-repair-fort-lauderdale-fl">Fort Lauderdale</a></li>
+              <li><a href="/auto-glass-repair-pembroke-pines-fl">Pembroke Pines</a></li>
+              <li><a href="/auto-glass-repair-hollywood-fl">Hollywood</a></li><!--/PAGE:FOOTER_AREA_A--></ul>
+      </div>
+      <div>
+        <h3 style="font-size:1rem;margin-bottom:14px">Southwest Florida</h3>
+        <ul class="areas"><!--PAGE:FOOTER_AREA_B--><li><a href="/auto-glass-repair-southwest-florida">All of Southwest Florida</a></li><!--/PAGE:FOOTER_AREA_B--></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WARRANTY ============ -->
+<section class="sec sec-cyan">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Our promise</span>
+      <div class="promise-row">
+        <h2>What the warranty actually covers</h2>
+        <!--PAGE:SEAL--><img class="seal" src="/img/warranty-badge.ce96bc90.png" width="160" height="139" loading="lazy" decoding="async" alt="Maximum Glass Corp lifetime workmanship warranty"><!--/PAGE:SEAL-->
+      </div>
+      <p class="lead">"Lifetime warranty" is meaningless unless somebody writes down what it includes. Here's ours.</p>
+    </div>
+    <div class="grid grid-2">
+      <div class="card">
+        <h3>Covered, for as long as you own the vehicle</h3>
+        <ul style="margin:0;padding-left:1.1em;color:var(--text-2)">
+          <li>Water leaks caused by our installation</li>
+          <li>Wind noise caused by our installation</li>
+          <li>Moulding and trim failures from our fitting</li>
+          <li>Workmanship defects of any kind on our install</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Not covered — and we'd rather say so up front</h3>
+        <ul style="margin:0;padding-left:1.1em;color:var(--text-2)">
+          <li>New impact damage — a fresh rock is a fresh job</li>
+          <li>Stress cracks spreading from damage that predates our work</li>
+          <li>Defects in the glass itself, which carry the manufacturer's warranty</li>
+          <li>Damage from a later collision or a break-in</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow">Questions</span>
+      <h2>Frequently asked</h2>
+    </div>
+    <div class="faqs"><!--PAGE:FAQ--><div class="faq"><button type="button" aria-expanded="false" aria-controls="faq-a-0" id="faq-q-0"><span>Do you have a shop I can drive to?</span><span class="chev" aria-hidden="true"></span></button><div class="ans" id="faq-a-0" role="region" aria-labelledby="faq-q-0"><div class="ans-in"><p>No — Maximum Glass is mobile only. The van comes to your home, workplace or wherever the vehicle is parked, anywhere in our seven-county South Florida service area. That is the whole model, not a side service.</p></div></div></div>
+          <div class="faq"><button type="button" aria-expanded="false" aria-controls="faq-a-1" id="faq-q-1"><span>What does a new windshield cost?</span><span class="chev" aria-hidden="true"></span></button><div class="ans" id="faq-a-1" role="region" aria-labelledby="faq-q-1"><div class="ans-in"><p>It depends on the vehicle and the glass — a base sedan and a camera-equipped SUV are entirely different jobs, which is why no honest shop prints one price. Send the quote form with your vehicle details and you get a real figure for your exact VIN. If you carry comprehensive insurance, Florida law waives the windshield deductible and we bill the carrier directly.</p></div></div></div>
+          <div class="faq"><button type="button" aria-expanded="false" aria-controls="faq-a-2" id="faq-q-2"><span>How soon can you come out?</span><span class="chev" aria-hidden="true"></span></button><div class="ans" id="faq-a-2" role="region" aria-labelledby="faq-q-2"><div class="ans-in"><p>Often same-day when your glass is in stock, and most common windshields are. Scheduling runs Monday to Friday 7:30–5, Saturdays by appointment. Call before mid-morning and there is a good chance the van reaches you the same afternoon.</p></div></div></div>
+          <div class="faq"><button type="button" aria-expanded="false" aria-controls="faq-a-3" id="faq-q-3"><span>Is the work warrantied?</span><span class="chev" aria-hidden="true"></span></button><div class="ans" id="faq-a-3" role="region" aria-labelledby="faq-q-3"><div class="ans-in"><p>Yes — a lifetime workmanship warranty against water leaks and air noise, for as long as you own the vehicle. It covers the installation work we did; glass damaged by a new impact is a new job, and we say so up front rather than in fine print.</p></div></div></div><!--/PAGE:FAQ--></div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final">
+  <div class="wrap">
+    <div class="sec-head center" style="margin-bottom:0">
+      <span class="eyebrow">Ready when you are</span>
+      <h2>Get your glass sorted this week</h2>
+      <p class="lead" style="color:var(--text-on-dark-2)">Send the form and we'll confirm your glass, your coverage and a time — or just call and talk to somebody now.</p>
+      <div class="final-actions">
+        <a class="btn btn-primary" href="#quote">Get my free quote</a>
+        <a class="btn btn-call" href="tel:+13059513295">Call (305) 951-3295</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr-grid">
+      <div class="ftr-brand">
+        <img src="/img/logo-wordmark.f20152e2.png" width="234" height="96" alt="Maximum Glass Corp" loading="lazy" decoding="async">
+        <p>Mobile windshield replacement, chip repair, door and back glass, and ADAS recalibration across South Florida. No shop to drive to — the van comes to your driveway or workplace.</p>
+        <p style="margin-top:12px">
+          <a class="ftr-tel" href="tel:+13059513295">(305) 951-3295</a><br>
+          <a href="mailto:maximumglasscorp@gmail.com">maximumglasscorp@gmail.com</a>
+        </p>
+      </div>
+      <div>
+        <h2>Services</h2>
+        <ul><!--PAGE:FOOTER_SERVICES--><li><a href="/windshield-replacement">Windshield replacement</a></li>
+              <li><a href="/windshield-repair">Chip &amp; crack repair</a></li>
+              <li><a href="/windshield-chip-repair">Chip repair</a></li>
+              <li><a href="/windshield-crack-repair">Crack repair</a></li>
+              <li><a href="/rock-chip-repair">Rock chip repair</a></li>
+              <li><a href="/auto-glass-repair">Auto glass repair</a></li>
+              <li><a href="/auto-glass-replacement">Auto glass replacement</a></li>
+              <li><a href="/car-window-replacement">Car window replacement</a></li>
+              <li><a href="/car-window-repair">Car window repair</a></li>
+              <li><a href="/door-glass-repair">Door glass repair</a></li>
+              <li><a href="/back-glass-repair">Back glass replacement</a></li>
+              <li><a href="/adas-calibration">ADAS calibration</a></li>
+              <li><a href="/mobile-service">Mobile service</a></li>
+              <li><a href="/auto-insurance">Insurance claims</a></li><!--/PAGE:FOOTER_SERVICES--></ul>
+      </div>
+      <div>
+        <h2>Southeast Florida</h2>
+        <ul><!--PAGE:FOOTER_AREA_A--><li><a href="/auto-glass-repair-southeast-florida">All of Southeast Florida</a></li>
+              <li><a href="/auto-glass-repair-miami-fl">Miami</a></li>
+              <li><a href="/auto-glass-repair-hialeah-fl">Hialeah</a></li>
+              <li><a href="/auto-glass-repair-fort-lauderdale-fl">Fort Lauderdale</a></li>
+              <li><a href="/auto-glass-repair-pembroke-pines-fl">Pembroke Pines</a></li>
+              <li><a href="/auto-glass-repair-hollywood-fl">Hollywood</a></li><!--/PAGE:FOOTER_AREA_A--></ul>
+      </div>
+      <div>
+        <h2>Southwest Florida</h2>
+        <ul><!--PAGE:FOOTER_AREA_B--><li><a href="/auto-glass-repair-southwest-florida">All of Southwest Florida</a></li><!--/PAGE:FOOTER_AREA_B--></ul>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         Regulator registration block.
+
+         Licensed trades commonly must show a registration number in
+         internet advertising. California auto glass is the case this was
+         built for: 16 CCR § 3371.2, effective 2025-10-01, requires a
+         registered Automotive Repair Dealer to display the firm name
+         exactly as registered, the ARD registration number, and the
+         telephone number on file with the Bureau. Contractors, HVAC,
+         electrical, pest control and locksmiths have equivalents in most
+         states — check the client's, do not assume there is none.
+
+         The registered number is DELIBERATELY EXCLUDED from dynamic
+         number insertion: it carries .ghl-no-swap / data-no-swap. A
+         tracking number that differs from the registered number may be
+         treated as misleading, so DNI is confined to the header and CTA
+         numbers and must never rewrite this one. The Google call-asset
+         number is excluded for the same mechanical reason: Google
+         verifies that exact number appears on the site.
+
+         With site.compliance.registration.number empty the generator
+         removes the registration and registered-telephone lines and this
+         degrades to name / call number / address.
+         ============================================================ -->
+    <div class="bar">
+      <div class="bar-id">
+        <b>Maximum Glass Corp</b> · Florida Dept. of Agriculture &amp; Consumer Services MV Repair Registration <b>MV112120</b><br>
+        Registered telephone: <a class="ghl-no-swap" data-no-swap="true" href="tel:+13059513295">(305) 951-3295</a><br>
+        Serving South Florida: <a class="ghl-no-swap" data-no-swap="true" href="tel:+19547514739">(954) 751-4739</a><br>
+        400 W 29th Pl #110, Hialeah, FL 33012
+      </div>
+      <!-- Restates claims made further up this page. Never a third-party mark.
+           See barTrustHtml() in build-pages.cjs. -->
+      <!--PAGE:BARTRUST--><div class="bar-trust"><div class="bt"><svg class="bt-i" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13"/><path d="M16 8h4l3 3v5h-7V8Z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg><div><b>Mobile-only service</b><span>Driveway, office or roadside — we come to you</span></div></div><div class="bt"><svg class="bt-i" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 4 6v6c0 5 3.4 9.3 8 10 4.6-.7 8-5 8-10V6l-8-4Z"/></svg><div><b>Lifetime workmanship warranty</b><span>Water leaks and air noise, defined on-page</span></div></div><div class="bt"><svg class="bt-i" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6Z"/><path d="M14 2v6h6"/><path d="M9 15h6"/></svg><div><b>Insurance billing handled</b><span>Claim set up and billed direct to your carrier</span></div></div><div class="bt"><svg class="bt-i" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="8"/><path d="M12 1v3m0 16v3M1 12h3m16 0h3"/></svg><div><b>ADAS recalibration on site</b><span>Camera systems reset after windshield work</span></div></div></div><!--/PAGE:BARTRUST-->
+    </div>
+
+    <div class="ftr-legal">
+      <div>© 2026 Maximum Glass Corp. All rights reserved. Mobile auto glass service across Miami-Dade, Broward, Palm Beach, Monroe, Lee, Collier and Charlotte counties; registered in Hialeah, Florida.</div>
+      <div class="ftr-links">
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms</a>
+        <a href="/">Home</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- sticky mobile action bar -->
+<div class="sticky" id="stickybar" aria-hidden="true">
+  <a class="btn btn-primary" href="tel:+13059513295">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.7a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2Z"/></svg>
+    Call now
+  </a>
+  <a class="btn btn-ghost" href="#quote">Get quote</a>
+</div>
+
+<script>
+(function(){
+  'use strict';
+
+  /* ---------------- FAQ accordion ---------------- */
+  document.querySelectorAll('.faq button').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var faq = btn.closest('.faq'), ans = faq.querySelector('.ans');
+      var open = faq.classList.contains('open');
+      if(open){
+        faq.classList.remove('open'); ans.style.maxHeight = null;
+        btn.setAttribute('aria-expanded','false');
+      } else {
+        faq.classList.add('open'); ans.style.maxHeight = ans.scrollHeight + 'px';
+        btn.setAttribute('aria-expanded','true');
+      }
+    });
+  });
+  /* A stale pixel max-height clips the answer after a rotate, so re-measure. */
+  var faqT;
+  window.addEventListener('resize', function(){
+    clearTimeout(faqT);
+    faqT = setTimeout(function(){
+      document.querySelectorAll('.faq.open .ans').forEach(function(a){
+        a.style.maxHeight = a.scrollHeight + 'px';
+      });
+    }, 120);
+  });
+
+  /* ---------------- header scroll state ---------------- */
+  var hdr = document.querySelector('.hdr');
+  var onScroll = function(){
+    if(hdr) hdr.classList.toggle('scrolled', window.scrollY > 8);
+  };
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  /* ---------------- progressive disclosure ---------------- */
+  var qcExpand = document.getElementById('qcExpand'), qcMore = document.getElementById('qcMore');
+  if(qcExpand && qcMore){
+    qcExpand.addEventListener('click', function(){
+      var open = qcMore.hasAttribute('hidden');
+      if(open){ qcMore.removeAttribute('hidden'); } else { qcMore.setAttribute('hidden',''); }
+      qcExpand.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if(open){ var f = qcMore.querySelector('select,input'); if(f) f.focus(); }
+    });
+  }
+
+  /* Carrier only matters when they're actually filing a claim. */
+  var carrierField = document.getElementById('carrierField');
+  function syncCarrier(){
+    var yes = document.getElementById('ins-y');
+    if(!carrierField) return;
+    if(yes && yes.checked) carrierField.removeAttribute('hidden');
+    else carrierField.setAttribute('hidden','');
+  }
+  ['ins-y','ins-n','ins-u'].forEach(function(id){
+    var el = document.getElementById(id);
+    if(el) el.addEventListener('change', syncCarrier);
+  });
+  syncCarrier();
+
+  /* ================= attribution capture =================
+     Google sends gbraid/wbraid INSTEAD of gclid on iOS and consent-mode
+     traffic, so capturing only gclid silently loses that whole segment.
+     Kept in sessionStorage rather than a page variable so it survives
+     navigation across the mini-site and still attaches if the visitor
+     submits from a different page than they landed on. */
+  var ATTR_KEYS = ['gclid','gbraid','wbraid','gclsrc','msclkid','fbclid','ttclid','li_fat_id',
+                   'utm_source','utm_medium','utm_campaign','utm_term','utm_content'];
+  var attribution = (function(){
+    var store = {};
+    try{ store = JSON.parse(sessionStorage.getItem('lp_attr') || '{}'); }catch(e){ store = {}; }
+    var qs = new URLSearchParams(location.search), touched = false;
+    ATTR_KEYS.forEach(function(k){
+      var v = qs.get(k);
+      if(v){ store[k] = v; touched = true; }      // newest click wins
+    });
+    if(!store.landing_page){ store.landing_page = location.href.split('#')[0]; touched = true; }
+    if(!store.referrer){ store.referrer = document.referrer || ''; touched = true; }
+    if(touched){ try{ sessionStorage.setItem('lp_attr', JSON.stringify(store)); }catch(e){} }
+    return store;
+  })();
+
+  function track(name, params){
+    try{
+      if(window.gtag){ window.gtag('event', name, params || {}); }
+      else if(window.dataLayer){ window.dataLayer.push(Object.assign({event:name}, params || {})); }
+    }catch(e){}
+  }
+  document.querySelectorAll('a[href^="tel:"]').forEach(function(a){
+    a.addEventListener('click', function(){
+      track('click_to_call', { location: a.closest('.sticky') ? 'sticky' : (a.closest('.hdr') ? 'header' : 'body') });
+    });
+  });
+
+  /* ================= Google Ads conversion =================
+     Reported from the page so it does not depend on a CRM automation.
+     GHL's Ads integration is offline-import only and fires from an
+     allowlisted set of triggers that does NOT include Inbound Webhook —
+     which is exactly why forms are reported here and calls are reported
+     by GHL's Number Pool Calling trigger. Do not let both report forms. */
+  function fireAdsConversion(lead){
+    var c = window.SITE_CONFIG || {};
+    if(!c.GOOGLE_ADS_ID || !c.GOOGLE_ADS_LABEL || !window.gtag){
+      try{ console.info('[conv] NOT reported — Ads ID/label missing, or gtag blocked'); }catch(e){}
+      return;
+    }
+
+    /* EVERY submitted form is a conversion, including a repeat from the same
+       person. That is the client's decision and it removes two separate
+       dedupes, not one — the second is not in this file and is easy to miss:
+
+       1. A browser-side store used to hold a `lp_conv_<txnId>` key and return
+          early on a match. Gone entirely.
+
+       2. Google Ads dedupes server-side on transaction_id. A stable ID — and
+          `lead-<gclid>-<phone>` is perfectly stable for one person — means the
+          second submission is accepted by the browser, sent, and then silently
+          discarded by Google. Removing (1) alone would have looked like it
+          worked and changed nothing in the account.
+
+       So the ID carries a per-submission suffix. It still leads with the click
+       ID and phone, which is what makes it readable next to a CRM record; the
+       suffix only has to make it unique. Timestamp plus a random tail, because
+       two submissions can land in the same millisecond.
+
+       The cost is that a genuine accidental double-submit now counts twice.
+       The re-entrancy guard below still stops one CLICK becoming two, so this
+       is limited to a person deliberately submitting again. */
+    var txnId = 'lead-' + (attribution.gclid || attribution.gbraid || attribution.wbraid || 'direct') +
+                '-' + String(lead.phone || '').replace(/\D/g,'').slice(-10) +
+                '-' + Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
+
+    /* Enhanced conversions: gtag.js hashes these in the browser before
+       sending — they never leave in the clear — and they raise match rates. */
+    try{
+      gtag('set', 'user_data', {
+        email: lead.email || undefined,
+        phone_number: lead.phone || undefined      // E.164
+      });
+    }catch(e){}
+
+    gtag('event', 'conversion', {
+      send_to: c.GOOGLE_ADS_ID + '/' + c.GOOGLE_ADS_LABEL,
+      value: Number(c.LEAD_VALUE) || 0,
+      currency: c.CURRENCY || 'USD',
+      transaction_id: txnId
+    });
+    /* Three separate paths through a submit end in the same success screen —
+       a reported conversion, one suppressed as a duplicate, and one dropped by
+       the bot check. From the visitor's side they are identical, which is
+       correct; from a console they were identical too, which is how "Tag
+       Assistant sees nothing" became unanswerable without guessing. Each path
+       now says which one it took. Visitors never open this; whoever is
+       verifying the tag always does. */
+    try{ console.info('[conv] reported ' + c.GOOGLE_ADS_ID + '/' + c.GOOGLE_ADS_LABEL + ' — txn ' + txnId); }catch(e){}
+  }
+
+  /* ================= lead delivery =================
+     HighLevel Inbound Webhook. This URL is visible in page source —
+     unavoidable for any browser-side post. It is write-only, but anyone
+     can call it, so keep spam filtering on in GHL. */
+  var LEAD_WEBHOOK = "REPLACE__https://services.leadconnectorhq.com/hooks/.../webhook-trigger/...";
+
+  /* phone: format as they type, normalise to E.164 for GHL and Google
+     (both match E.164 far more reliably than "(714) 555-0142") */
+  function phDigits(v){
+    var d = String(v || '').replace(/\D/g,'');
+    if(d.length === 11 && d.charAt(0) === '1') d = d.slice(1);
+    return d.slice(0,10);
+  }
+  function phFormat(d){
+    if(!d) return '';
+    if(d.length < 4) return '(' + d;
+    if(d.length < 7) return '(' + d.slice(0,3) + ') ' + d.slice(3);
+    return '(' + d.slice(0,3) + ') ' + d.slice(3,6) + '-' + d.slice(6);
+  }
+  function phE164(v){ var d = phDigits(v); return d.length === 10 ? '+1' + d : ''; }
+
+  var phEl = document.getElementById('ph');
+  if(phEl){
+    phEl.setAttribute('maxlength','14');
+    phEl.addEventListener('input', function(){ this.value = phFormat(phDigits(this.value)); });
+  }
+  var zipEl = document.getElementById('zip');
+  if(zipEl){
+    zipEl.addEventListener('input', function(){ this.value = this.value.replace(/\D/g,'').slice(0,5); });
+  }
+
+  /* VIN: real VINs are uppercase and never contain I, O or Q (they'd be
+     mistaken for 1 and 0), so filter those as they type. */
+  var vinEl = document.getElementById('vin'), vinHint = document.getElementById('vinHint');
+  if(vinEl){
+    vinEl.addEventListener('input', function(){
+      var v = this.value.toUpperCase().replace(/[^A-HJ-NPR-Z0-9]/g,'').slice(0,17);
+      this.value = v;
+      if(!vinHint) return;
+      if(!v){ vinHint.style.display = 'none'; this.style.borderColor = ''; return; }
+      vinHint.style.display = 'block';
+      if(v.length === 17){
+        this.style.borderColor = 'var(--success)';
+        vinHint.textContent = '✓ Looks like a valid VIN'; vinHint.style.color = 'var(--success)';
+      } else {
+        this.style.borderColor = '';
+        vinHint.textContent = v.length + ' of 17 characters'; vinHint.style.color = 'var(--text-muted)';
+      }
+    });
+  }
+
+  /* ---------------- validation + submit ---------------- */
+  var form = document.getElementById('quoteForm');
+  if(form){
+    var submitBtn = form.querySelector('.qc-submit');
+    var btnLabel = submitBtn ? submitBtn.querySelector('.btn-label') : null;
+    var origLabel = btnLabel ? btnLabel.textContent : 'Get my free quote';
+    var statusEl = document.getElementById('qcStatus');
+    var errBox = document.getElementById('quoteError');
+
+    var RULES = [
+      { el:'nm',  err:'nm-err',  msg:'Enter your name so we know who to ask for.',
+        ok:function(v){ return v.trim().length >= 2; } },
+      { el:'ph',  err:'ph-err',  msg:'Enter a 10-digit mobile number so we can call you back.',
+        ok:function(v){ return phDigits(v).length === 10; } },
+      { el:'em',  err:'em-err',  msg:'Enter a valid email address.',
+        ok:function(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()); } },
+      { el:'zip', err:'zip-err', msg:'Enter the 5-digit ZIP where the vehicle is.',
+        ok:function(v){ return /^\d{5}$/.test(v.trim()); } },
+      { el:'svc', err:'svc-err', msg:'Tell us which glass you need.',
+        ok:function(v){ return !!v; } },
+      /* Year make model. Two words minimum, so "car" and "." do not pass —
+         a vehicle we cannot identify is a vehicle we cannot quote. */
+      { el:'veh', err:'veh-err', msg:'Add the year, make and model, e.g. 2021 Toyota RAV4.',
+        ok:function(v){ return v.trim().replace(/\s+/g,' ').split(' ').length >= 2 && v.trim().length >= 6; } }
+    ];
+
+    function setErr(rule, show){
+      var el = document.getElementById(rule.el), box = document.getElementById(rule.err);
+      if(!el || !box) return;
+      if(show){
+        el.setAttribute('aria-invalid','true');
+        el.setAttribute('aria-describedby', rule.err);
+        box.textContent = rule.msg; box.classList.add('on');
+      } else {
+        el.removeAttribute('aria-invalid'); el.removeAttribute('aria-describedby');
+        box.textContent = ''; box.classList.remove('on');
+      }
+    }
+
+    /* Validate on blur, never on keydown — premature errors read as hostile.
+       Once a field is already in error, re-validate on input so it clears
+       as soon as they fix it. */
+    RULES.forEach(function(rule){
+      var el = document.getElementById(rule.el);
+      if(!el) return;
+      el.addEventListener('blur', function(){ if(el.value.trim()) setErr(rule, !rule.ok(el.value)); });
+      el.addEventListener('input', function(){
+        if(el.getAttribute('aria-invalid') === 'true' && rule.ok(el.value)) setErr(rule, false);
+      });
+    });
+
+    function showSuccess(first){
+      var echo = document.getElementById('echoName');
+      if(echo) echo.textContent = first;
+      form.style.display = 'none';
+      var ok = document.getElementById('quoteSuccess');
+      ok.classList.add('on');
+      var head = document.getElementById('okHead');
+      if(head){ head.focus(); }
+      try{ ok.scrollIntoView({block:'center', behavior:'smooth'}); }catch(e){}
+    }
+    function showError(){
+      submitting = false;
+      if(submitBtn){
+        submitBtn.removeAttribute('aria-disabled');
+        submitBtn.disabled = false;
+        submitBtn.style.pointerEvents = '';
+      }
+      if(btnLabel) btnLabel.textContent = origLabel;
+      form.removeAttribute('aria-busy');
+      /* Clear the polite live region, or a screen reader is left with
+         "Sending your request…" contradicting the alert box. */
+      if(statusEl) statusEl.textContent = '';
+      errBox.innerHTML = 'Sorry — that didn’t go through. Please call ' +
+        '<a href="tel:+13059513295" style="color:var(--error);font-weight:800">(305) 951-3295</a> and we’ll take the details over the phone.';
+      errBox.classList.add('on');
+    }
+
+    /* A real re-entrancy guard. aria-disabled is advisory and pointer-events:none
+       only blocks mouse and touch, so pressing Enter three times in any field
+       used to post three times — three GHL contacts, three workflow triggers,
+       three outbound calls to one impatient person. The Ads conversion was
+       always deduped by transaction_id; this protects the CRM. */
+    var submitting = false;
+
+    /* Bot signal: a human cannot submit without generating a trusted pointerdown
+       or keydown inside the form — clicking the button or pressing Enter both
+       count. A script that sets .value and calls click() generates neither.
+       Deliberately NOT a time threshold: browser autofill can populate the whole
+       form in one tap, and dropping that visitor would lose a paid lead and show
+       them a success screen that lied. A false negative costs one junk row in
+       the CRM; a false positive costs a customer. */
+    var interacted = false;
+    function sawUser(e){ if(e.isTrusted) interacted = true; }
+    form.addEventListener('pointerdown', sawUser, true);
+    form.addEventListener('keydown', sawUser, true);
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      if(submitting) return;
+      errBox.classList.remove('on');
+
+      /* Show the normal success screen rather than an error — telling a bot why
+         it failed is how it learns to pass. Nothing is POSTed and no conversion
+         is reported. */
+      var hp = document.getElementById('hp_check');
+      if((hp && hp.value) || !interacted){
+        try{ console.info('[conv] NOT reported — submit failed the bot check (honeypot=' +
+             !!(hp && hp.value) + ', trusted interaction=' + interacted + ')'); }catch(e){}
+        showSuccess((document.getElementById('nm').value || '').trim().split(/\s+/)[0] || 'there');
+        return;
+      }
+
+      var bad = [];
+      RULES.forEach(function(rule){
+        var el = document.getElementById(rule.el);
+        var invalid = !el || !rule.ok(el.value);
+        setErr(rule, invalid);
+        if(invalid) bad.push(rule);
+      });
+      if(bad.length){
+        if(statusEl) statusEl.textContent = bad.length + (bad.length === 1 ? ' field needs' : ' fields need') + ' attention.';
+        var firstBad = document.getElementById(bad[0].el);
+        if(firstBad) firstBad.focus();
+        try{ console.info('[conv] NOT reported — validation stopped the submit: ' +
+             bad.map(function(b){ return b.el; }).join(', ')); }catch(e){}
+        return;
+      }
+
+      var nm = document.getElementById('nm'), em = document.getElementById('em'),
+          ph = document.getElementById('ph'), zip = document.getElementById('zip');
+      var fullName = nm.value.trim();
+      var parts = fullName.split(/\s+/);
+      var first = parts[0] || 'there';
+      var leadInfo = { email: em.value.trim(), phone: phE164(ph.value) || ph.value.trim() };
+
+      track('generate_lead', { form:'quote' });
+
+      /* Report to Google Ads HERE — on a validated submit, before delivery is
+         attempted, and regardless of whether delivery succeeds.
+
+         This used to sit inside the fetch's success handler so that a lead
+         which never reached the CRM was never counted. That is the safer rule
+         for a shop whose CRM is the system of record, and it is deliberately
+         NOT the rule here: the form submit IS the conversion action, and GHL
+         reports only phone calls from the number pool. A CRM outage must not
+         also blank the ad account's conversion feed, because that is precisely
+         when smart bidding needs the signal.
+
+         The trade is real and worth stating: a delivery failure now counts a
+         conversion for a lead the shop never received. fireAdsConversion is
+         deduped on transaction_id, and the bot trap above still gates this, so
+         the exposure is genuine submissions that failed to POST — not retries
+         and not bots. The visitor still sees the error state below and is told
+         to call.
+
+         Do not let GHL also report form submissions, or every lead counts
+         twice. */
+      fireAdsConversion(leadInfo);
+
+      /* No webhook configured yet → the conversion is already reported, so just
+         show success. Keeps the page safe to deploy before GHL is wired up. */
+      if(!LEAD_WEBHOOK){ showSuccess(first); return; }
+
+      var insEl = document.querySelector('input[name="insurance"]:checked');
+      var payload = {
+        full_name: fullName,
+        first_name: parts[0] || fullName,
+        last_name: parts.length > 1 ? parts.slice(1).join(' ') : '',
+        email: em.value.trim(),
+        phone: phE164(ph.value) || ph.value.trim(),
+        phone_formatted: ph.value.trim(),
+        postal_code: zip.value.trim(),
+        vehicle: (document.getElementById('veh').value || '').trim(),
+        vin: (document.getElementById('vin').value || '').trim(),
+        service: document.getElementById('svc').value,
+        insurance: insEl ? insEl.value : '',
+        carrier: document.getElementById('carrier').value || '',
+        source: 'landing:maximum-southfl',
+        page_path: '/',
+        page: location.href,
+        submitted_at: new Date().toISOString()
+      };
+      ATTR_KEYS.concat(['landing_page','referrer']).forEach(function(k){
+        payload[k] = attribution[k] || '';
+      });
+
+      submitting = true;
+      if(submitBtn){
+        submitBtn.setAttribute('aria-disabled','true');
+        submitBtn.disabled = true;
+        submitBtn.style.pointerEvents = 'none';
+      }
+      if(btnLabel) btnLabel.textContent = 'Sending…';
+      form.setAttribute('aria-busy','true');
+      if(statusEl) statusEl.textContent = 'Sending your request…';
+
+      /* Bound the wait. A bare fetch has no timeout, so a webhook that accepts
+         the connection and never answers — slow GHL, flaky mobile radio, captive
+         portal, corporate proxy — left the button reading "Sending…" forever,
+         with no error, no conversion and no delivered lead. That is the most
+         common real failure for a browser-side POST. On abort we fall through
+         to showError(), which tells them to call instead. The conversion has
+         already been reported by this point, so an abort costs the lead but
+         not the ad signal. */
+      var ctrl = ('AbortController' in window) ? new AbortController() : null;
+      var timer = setTimeout(function(){ if(ctrl) ctrl.abort(); }, 10000);
+
+      fetch(LEAD_WEBHOOK, {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify(payload),
+        signal: ctrl ? ctrl.signal : undefined
+      })
+      .then(function(res){
+        clearTimeout(timer);
+        if(!res.ok) throw new Error('HTTP ' + res.status);
+        /* Conversion already reported at submit — see the note above. */
+        if(statusEl) statusEl.textContent = 'Request sent.';
+        showSuccess(first);
+      })
+      .catch(function(){ clearTimeout(timer); showError(); });
+    });
+  }
+
+  /* ---------------- rating entrance ----------------
+     Adds .in when a rating block first scrolls into view, which is what the
+     star animation hangs off. Everything is already visible without this —
+     the class only turns the entrance on — so no JS failure can hide a rating. */
+  if('IntersectionObserver' in window){
+    var animated = document.querySelectorAll('[data-animate]');
+    if(animated.length){
+      /* Tells the CSS that script is running, so the collapsed start states are
+         safe to apply. Set before observing, never after. */
+      animated.forEach(function(el){ el.classList.add('js-anim'); });
+
+      /* Two observers rather than one, deliberately. Entry fires early (the
+         block only has to reach the upper two thirds), exit fires late (the
+         block has to leave the viewport completely). That hysteresis is what
+         stops the animation retriggering while it is still half on screen. */
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(e.isIntersecting){ e.target.classList.add('in'); countUp(e.target); }
+        });
+      }, {
+        /* threshold alone fires off the bottom edge: .steps is ~700px tall, so
+           35% of it is visible while its top is still near the foot of the
+           screen — the animation played where it could not be seen. Shrinking
+           the root's bottom by 30% means the block has to climb into the upper
+           two thirds of the viewport before it counts as visible. */
+        threshold: 0,
+        rootMargin: '0px 0px -30% 0px'
+      });
+
+      /* Count-up for [data-count]. The element already contains the final
+         formatted value, so no JS and reduced motion both leave the correct
+         number on screen — the animation only ever replaces it temporarily and
+         always restores the exact original string at the end. */
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      function countUp(root){
+        if(reduce) return;
+        root.querySelectorAll('[data-count]').forEach(function(el){
+          var target = parseFloat(el.getAttribute('data-count'));
+          if(!isFinite(target)) return;
+          var decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+          var group = el.hasAttribute('data-group');
+          var final = el.getAttribute('data-final') || el.textContent;
+          el.setAttribute('data-final', final);          // never re-derive from a mid-count value
+          if(el._raf) cancelAnimationFrame(el._raf);
+          var dur = 900, t0 = 0;
+          function frame(t){
+            if(!t0) t0 = t;
+            var k = Math.min(1, (t - t0) / dur);
+            var eased = 1 - Math.pow(1 - k, 3);
+            var v = target * eased;
+            el.textContent = group
+              ? Math.round(v).toLocaleString('en-US')
+              : v.toFixed(decimals);
+            if(k < 1){ el._raf = requestAnimationFrame(frame); }
+            else { el.textContent = final; el._raf = null; }
+          }
+          el.textContent = decimals ? (0).toFixed(decimals) : '0';
+          el._raf = requestAnimationFrame(frame);
+        });
+      }
+
+      /* Removing .in restarts the CSS animations next time it is added, which
+         is what makes them replay on the way back down. */
+      var out = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(!e.isIntersecting){ e.target.classList.remove('in'); }
+        });
+      }, { threshold: 0 });
+
+      animated.forEach(function(el){ io.observe(el); out.observe(el); });
+    }
+  }
+
+  /* ---------------- sticky mobile bar ----------------
+     Hidden while the form is on screen so it never competes with the
+     higher-value form lead, and hidden while a field has focus so it
+     never sits over the keyboard's action row. */
+  var bar = document.getElementById('stickybar');
+  var quote = document.getElementById('quote');
+  if(bar && quote && 'IntersectionObserver' in window){
+    document.body.classList.add('has-sticky');
+    var fieldFocused = false, formVisible = true;
+    function sync(){
+      var show = !formVisible && !fieldFocused;
+      if(show){ bar.setAttribute('data-show',''); bar.setAttribute('aria-hidden','false'); }
+      else { bar.removeAttribute('data-show'); bar.setAttribute('aria-hidden','true'); }
+    }
+    new IntersectionObserver(function(entries){
+      formVisible = entries[0].isIntersecting;
+      sync();
+    }, { threshold:0.25 }).observe(quote);
+    if(form){
+      form.addEventListener('focusin', function(){ fieldFocused = true; sync(); });
+      form.addEventListener('focusout', function(){ fieldFocused = false; sync(); });
+    }
+    sync();
+  }
+})();
+</script>
+
+<!-- ============================================================
+     DNI — HighLevel dynamic number insertion.
+     Swaps the header / CTA numbers for a rotating pool number so GHL can
+     tie a call back to the visitor's session and report call conversions
+     to Google Ads via its Number Pool Calling trigger.
+
+     Loaded last so every number is in the DOM before the swap runs.
+
+     The BAR-registered number in the footer compliance block carries
+     .ghl-no-swap / data-no-swap and must NEVER be rewritten — see the
+     note on that block. Verify after every deploy that it still reads
+     the registered number.
+     ============================================================ -->
+
+
+<!--PAGE:JSONLD--><script type="application/ld+json">{"@context":"https://schema.org","@type":"AutoGlassShop","@id":"https://quote.maximumglasscorp.com/#business","name":"Maximum Glass","telephone":"+13059513295","url":"https://quote.maximumglasscorp.com/","image":"https://quote.maximumglasscorp.com/img/og-image.d5929e7c.png","priceRange":"$$","address":{"@type":"PostalAddress","streetAddress":"400 W 29th Pl #110","addressLocality":"Hialeah","addressRegion":"FL","postalCode":"33012","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":25.8486,"longitude":-80.291},"areaServed":[{"@type":"City","name":"Miami"},{"@type":"City","name":"Hialeah"},{"@type":"City","name":"Fort Lauderdale"},{"@type":"City","name":"Pembroke Pines"},{"@type":"City","name":"Hollywood"},{"@type":"City","name":"Miami-Dade County"},{"@type":"City","name":"Broward County"},{"@type":"City","name":"Palm Beach County"},{"@type":"City","name":"Monroe County"},{"@type":"City","name":"Lee County"},{"@type":"City","name":"Collier County"},{"@type":"City","name":"Charlotte County"}],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"07:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday"],"opens":"07:30","closes":"17:00"}],"email":"maximumglasscorp@gmail.com","sameAs":["https://maximumglasscorp.com/"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do you have a shop I can drive to?","acceptedAnswer":{"@type":"Answer","text":"No — Maximum Glass is mobile only. The van comes to your home, workplace or wherever the vehicle is parked, anywhere in our seven-county South Florida service area. That is the whole model, not a side service."}},{"@type":"Question","name":"What does a new windshield cost?","acceptedAnswer":{"@type":"Answer","text":"It depends on the vehicle and the glass — a base sedan and a camera-equipped SUV are entirely different jobs, which is why no honest shop prints one price. Send the quote form with your vehicle details and you get a real figure for your exact VIN. If you carry comprehensive insurance, Florida law waives the windshield deductible and we bill the carrier directly."}},{"@type":"Question","name":"How soon can you come out?","acceptedAnswer":{"@type":"Answer","text":"Often same-day when your glass is in stock, and most common windshields are. Scheduling runs Monday to Friday 7:30–5, Saturdays by appointment. Call before mid-morning and there is a good chance the van reaches you the same afternoon."}},{"@type":"Question","name":"Is the work warrantied?","acceptedAnswer":{"@type":"Answer","text":"Yes — a lifetime workmanship warranty against water leaks and air noise, for as long as you own the vehicle. It covers the installation work we did; glass damaged by a new impact is a new job, and we say so up front rather than in fine print."}}]}</script><!--/PAGE:JSONLD-->
+</body>
+</html>

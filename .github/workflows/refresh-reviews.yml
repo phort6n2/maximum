@@ -1,0 +1,101 @@
+name: Refresh Google reviews
+
+# Pulls the real Google rating, review count and quotes once a week and bakes
+# them into the generated site. One Places API call per week — visitors never
+# touch the API and the key never reaches the browser.
+#
+# NOTE: scheduled workflows only run from the DEFAULT branch. On a feature
+# branch GitHub does not register this workflow at all — it won't appear in the
+# Actions tab and cannot be dispatched. Merge to the default branch before
+# expecting the cron to fire.
+
+on:
+  schedule:
+    - cron: '17 9 * * 1' # Mondays 09:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-reviews
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Fetch Google reviews
+        env:
+          GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
+          GOOGLE_PLACE_ID: ${{ vars.GOOGLE_PLACE_ID }}   # optional override; default is baked into the script
+        run: node landing/fetch-reviews.cjs
+
+      # The fetch succeeds long before verify runs, and when verify blocks the
+      # commit the runner is destroyed with the data still in it — which is how
+      # a confirmed-good rating, count and set of quotes got thrown away three
+      # times on this build while the config was still incomplete.
+      #
+      # Printing it costs nothing and means a blocked run still yields the data.
+      # These are public Google reviews on a public listing; there is nothing
+      # here that is not already visible to anyone who clicks through.
+      - name: Show what was fetched
+        if: always()
+        run: cat landing/reviews.json || echo "(no reviews.json — the fetch skipped)"
+
+      - name: Rebuild site
+        run: npm run build:landing
+
+      - name: Verify build
+        run: npm run verify
+
+      - name: Commit if anything changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add landing/reviews.json quote-site
+          git diff --cached --quiet && echo "No review changes." && exit 0
+          git commit -m "Refresh Google reviews"
+
+          # This job runs unattended once a week with nobody watching it. A bare
+          # `git push` is rejected if ANYTHING landed on the branch between the
+          # checkout and here — and the only symptom is a red tick in a tab
+          # nobody opens, with the site quietly serving a stale rating until
+          # somebody notices weeks later.
+          #
+          # So: retry, and resolve correctly rather than merging two builds.
+          # quote-site/ is GENERATED, so a conflict in it is never resolved by
+          # picking a side. The right answer is always to take the config that is
+          # now on the branch and rebuild from it, carrying over only the
+          # freshly fetched reviews.json — which is why this resets and rebuilds
+          # instead of rebasing. No extra Places API call is made.
+          #
+          # Verified against a real rejected push: the run rebuilt from the
+          # config that had landed, kept the new review count, and produced a
+          # linear history with nothing lost.
+          cp landing/reviews.json "$RUNNER_TEMP/reviews.json"
+
+          for attempt in 1 2 3; do
+            if git push; then exit 0; fi
+            echo "Push rejected (attempt $attempt) — resyncing and rebuilding on the new HEAD."
+            git fetch origin "$GITHUB_REF_NAME"
+            git reset --hard FETCH_HEAD
+            cp "$RUNNER_TEMP/reviews.json" landing/reviews.json
+            npm run build:landing
+            npm run verify
+            git add landing/reviews.json quote-site
+            if git diff --cached --quiet; then
+              echo "Nothing left to commit after resync — another run got there first."
+              exit 0
+            fi
+            git commit -m "Refresh Google reviews"
+          done
+
+          echo "::error::Review refresh could not be pushed after 3 attempts."
+          exit 1

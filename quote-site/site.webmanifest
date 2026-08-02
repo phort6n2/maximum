@@ -1,0 +1,20 @@
+{
+  "name": "Maximum Glass",
+  "short_name": "MaximumGlass",
+  "icons": [
+    {
+      "src": "/img/icon-192.f88be480.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/img/icon-512.06da7231.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#0C2C47",
+  "background_color": "#FFFFFF",
+  "display": "browser",
+  "start_url": "/"
+}

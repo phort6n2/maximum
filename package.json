@@ -1,0 +1,23 @@
+{
+  "name": "landing-template",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Template for single-client Google Ads landing sites. Static HTML, no framework, one generator script.",
+  "scripts": {
+    "build:landing": "node landing/build-pages.cjs",
+    "fetch:reviews": "node landing/fetch-reviews.cjs",
+    "check:placeid": "node landing/fetch-reviews.cjs --dry-run",
+    "preflight": "node landing/preflight.cjs",
+    "verify": "node landing/preflight.cjs && node landing/verify.cjs",
+    "qa:render": "node qa/render-check.cjs",
+    "qa:tracking": "node qa/tracking-check.cjs",
+    "qa": "npm run build:landing && npm run verify && npm run qa:render && npm run qa:tracking",
+    "build:adsheet": "node landing/ads-sheet.cjs",
+    "check:urls": "node landing/check-urls.cjs",
+    "make:icons": "node tools/make-icons.cjs"
+  },
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "playwright": "^1.62.0"
+  }
+}
