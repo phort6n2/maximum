@@ -4,11 +4,13 @@ Every key the quote form POSTs to the inbound webhook, and what to do with it in
 client's subaccount. The mechanics are the same for every client; only the webhook
 URL, the location ID and the `source` value change.
 
-**Webhook:** `site.ghl.webhook` in `landing/pages.config.cjs`
-**Location ID:** `site.ghl.locationId`
+**Webhook:** `https://services.leadconnectorhq.com/hooks/m9SeW3c9CosxSesyLGPd/webhook-trigger/vVpnOtWjeVTGCz38Dfbc`
+**Location ID:** `m9SeW3c9CosxSesyLGPd`
+**Source tag on every lead:** `landing:maximum-southfl`
 
-Record both here once they exist, so whoever picks this up next is not digging
-through the config to find which subaccount a lead landed in.
+(Also in `landing/pages.config.cjs` under `site.ghl` — recorded here so whoever
+picks this up next is not digging through the config to find which subaccount a
+lead landed in.)
 
 ---
 
@@ -27,23 +29,23 @@ shows them blank. The lead is fine; the schema is what is wrong.
 Fix it by sending one sample where nothing is empty:
 
 ```bash
-curl -X POST 'https://services.leadconnectorhq.com/hooks/bEPjxnxSU2AfYQ1PIhK1/webhook-trigger/D6EuRh5CTS1KweBrURkM' \
+curl -X POST 'https://services.leadconnectorhq.com/hooks/m9SeW3c9CosxSesyLGPd/webhook-trigger/vVpnOtWjeVTGCz38Dfbc' \
   -H 'Content-Type: application/json' \
   -d '{
   "full_name":"Schema Test","first_name":"Schema","last_name":"Test",
-  "email":"schema-test@example.com","phone":"+15555550142",
-  "phone_formatted":"(555) 555-0142","postal_code":"92618",
+  "email":"schema-test@example.com","phone":"+13055550142",
+  "phone_formatted":"(305) 555-0142","postal_code":"33012",
   "vehicle":"2021 Toyota RAV4","vin":"JTMRWRFV0MD012345",
   "service":"windshield-replacement","insurance":"yes","carrier":"State Farm",
-  "source":"landing:client-market","page_path":"/a-service-page",
-  "page":"https://client-domain.com/a-service-page",
+  "source":"landing:maximum-southfl","page_path":"/windshield-replacement",
+  "page":"https://quote.maximumglasscorp.com/windshield-replacement",
   "submitted_at":"2026-01-01T00:00:00.000Z",
   "gclid":"SCHEMA_GCLID","gbraid":"SCHEMA_GBRAID","wbraid":"SCHEMA_WBRAID",
   "gclsrc":"aw.ds","msclkid":"SCHEMA_MSCLKID","fbclid":"SCHEMA_FBCLID",
   "ttclid":"SCHEMA_TTCLID","li_fat_id":"SCHEMA_LIFATID",
-  "utm_source":"google","utm_medium":"cpc","utm_campaign":"OC-LAC-Core-Glass",
-  "utm_term":"windshield replacement irvine","utm_content":"rsa-a",
-  "landing_page":"https://client-domain.com/a-service-page",
+  "utm_source":"google","utm_medium":"cpc","utm_campaign":"SouthFL-Core-Glass",
+  "utm_term":"windshield replacement miami","utm_content":"rsa-a",
+  "landing_page":"https://quote.maximumglasscorp.com/windshield-replacement",
   "referrer":"https://www.google.com/"
 }'
 ```
@@ -268,7 +270,7 @@ When you create it:
 | Setting | Value | Why |
 |---|---|---|
 | Goal | Submit lead form | |
-| Conversion name | e.g. `Form — Quote Request (LA site)` | |
+| Conversion name | `Submit lead form` (the action already wired up) | |
 | Value | Use a value, or 0 for now | Swap to real job value at day 30 via offline import |
 | Count | **One** | A quote request is one lead however many times the tab is refreshed |
 | Click-through window | 30 days | Glass decisions take hours to days; longer windows import stale credit |
@@ -282,21 +284,22 @@ slash in `send_to`) from *Tag setup → Use Google tag*, and put them in
 
 ```js
 ads: {
-  conversionId:    'AW-XXXXXXXXXX',
-  conversionLabel: 'AbC-D_efGh12',
+  conversionId:    'AW-11429085252',
+  conversionLabel: 'E2g-CL2d09ocEMSA6Mkq',
   ga4Id: '',
-  leadValue: 0
+  leadValue: 0          // <-- still 0: set to the average booked job value
 }
 ```
 
-Until those are filled the whole tracking block is a guarded no-op — the form still
-delivers leads, it just reports nothing.
+Both are filled for this client. `leadValue` is still `0`, so conversions report
+`value: 0` — harmless under Maximize Clicks/Conversions, but it must be set to a
+real figure before moving to Maximize Conversion Value or tROAS.
 
 ### Verify it end to end
 Load a page with a fake click ID, submit the form, and check both sides:
 
 ```
-https://client-domain.com/a-service-page?gclid=TEST123&utm_source=google&utm_medium=cpc
+https://quote.maximumglasscorp.com/windshield-replacement?gclid=TEST123&utm_source=google&utm_medium=cpc
 ```
 
 - Lead appears in GHL with `gclid = TEST123` on the contact

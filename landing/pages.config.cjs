@@ -167,7 +167,7 @@ module.exports = {
     },
 
     ghl: {
-      webhook: 'REPLACE__https://services.leadconnectorhq.com/hooks/.../webhook-trigger/...',
+      webhook: 'https://services.leadconnectorhq.com/hooks/m9SeW3c9CosxSesyLGPd/webhook-trigger/vVpnOtWjeVTGCz38Dfbc',
       /* From the old landing page's pool scripts. */
       locationId: 'm9SeW3c9CosxSesyLGPd',
       /* Two pools exist on the old site (munli7D4GnStBIxVKIkK and
