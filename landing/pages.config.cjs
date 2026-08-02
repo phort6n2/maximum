@@ -170,11 +170,17 @@ module.exports = {
       webhook: 'https://services.leadconnectorhq.com/hooks/m9SeW3c9CosxSesyLGPd/webhook-trigger/vVpnOtWjeVTGCz38Dfbc',
       /* From the old landing page's pool scripts. */
       locationId: 'm9SeW3c9CosxSesyLGPd',
-      /* Two pools exist on the old site (munli7D4GnStBIxVKIkK and
-       * DXIkXwfUh1hPrDdoYV2m). Left empty per Matt's call until the right one
-       * is confirmed in GHL — half-configured DNI silently shows the wrong
-       * number. */
-      poolId: ''
+      /* The old site loaded two pools (munli7D4GnStBIxVKIkK and
+       * DXIkXwfUh1hPrDdoYV2m); this is the one confirmed as current. The
+       * template already emits both DNI script tags — number_pool.js and
+       * user_session.js — so only the ID belongs here; pasting the script tags
+       * anywhere would load the pool twice.
+       *
+       * This swaps the header, CTA and sticky-bar numbers only. The footer
+       * call-asset number (954) 751-4739 carries ghl-no-swap and verify.cjs
+       * asserts that on every page — if DNI ever rewrote it, Google's
+       * call-asset verification would fail and the asset would be disapproved. */
+      poolId: 'munli7D4GnStBIxVKIkK'
     },
 
     compliance: {
