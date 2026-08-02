@@ -155,7 +155,13 @@ module.exports = {
     ads: {
       /* From the old landing page's gtag. Confirm the account is current. */
       conversionId: 'AW-11429085252',
-      conversionLabel: 'REPLACE__conversion-label',
+      /* "Submit lead form" conversion action. Taken from the label half of the
+       * event snippet's send_to (AW-11429085252/E2g-CL2d09ocEMSA6Mkq) — the
+       * snippet itself is deliberately NOT pasted into the page: it would be a
+       * second gtag load and a second config call for one account, and Google's
+       * version omits allow_enhanced_conversions, so pasting it would silently
+       * switch enhanced conversions off. The page composes send_to itself. */
+      conversionLabel: 'E2g-CL2d09ocEMSA6Mkq',
       ga4Id: '',
       leadValue: 0
     },
