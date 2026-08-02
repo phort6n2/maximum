@@ -271,7 +271,7 @@ When you create it:
 |---|---|---|
 | Goal | Submit lead form | |
 | Conversion name | `Submit lead form` (the action already wired up) | |
-| Value | Use a value, or 0 for now | Swap to real job value at day 30 via offline import |
+| Value | **Don't use a value** | This client runs `leadValue: 0` by choice; a fixed value here would be overridden by the tag anyway |
 | Count | **One** | A quote request is one lead however many times the tab is refreshed |
 | Click-through window | 30 days | Glass decisions take hours to days; longer windows import stale credit |
 | **Attribution** | Data-driven | |
@@ -291,9 +291,15 @@ ads: {
 }
 ```
 
-Both are filled for this client. `leadValue` is still `0`, so conversions report
-`value: 0` — harmless under Maximize Clicks/Conversions, but it must be set to a
-real figure before moving to Maximize Conversion Value or tROAS.
+Both are filled for this client. `leadValue` is **deliberately `0`** — the client's
+decision, not an unfilled field — so conversions report `value: 0`. That is inert
+under Maximize Clicks and Maximize Conversions.
+
+Two things follow from it. If the Google Ads conversion action is set to use a
+fixed value per conversion, **the tag's 0 overrides it**, so set that action to
+"Don't use a value" rather than entering a figure that silently never applies.
+And value-based bidding (Maximize Conversion Value, tROAS) cannot work on a feed
+of zeros — revisit `leadValue` before switching to either.
 
 ### Verify it end to end
 Load a page with a fake click ID, submit the form, and check both sides:

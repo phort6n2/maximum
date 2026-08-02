@@ -163,6 +163,20 @@ module.exports = {
        * switch enhanced conversions off. The page composes send_to itself. */
       conversionLabel: 'E2g-CL2d09ocEMSA6Mkq',
       ga4Id: '',
+      /* DELIBERATELY 0 — the client's decision, not an unfilled field. Do not
+       * "fix" it by inventing an average job value.
+       *
+       * The page always sends `value` (Number(LEAD_VALUE) || 0), so every
+       * conversion reports value 0 / USD. That is inert under Maximize Clicks
+       * and Maximize Conversions, which count leads rather than value.
+       *
+       * Two consequences worth knowing before anything changes in Ads:
+       *   - If the conversion action in Google Ads is set to use a fixed value
+       *     per conversion, the value sent by the tag WINS and overwrites it
+       *     with 0. Set that action to "Don't use a value" to avoid a figure
+       *     that looks set in the UI but never applies.
+       *   - Value-based bidding (Maximize Conversion Value, tROAS) cannot work
+       *     on a feed of zeros. Revisit this before switching to either. */
       leadValue: 0
     },
 
