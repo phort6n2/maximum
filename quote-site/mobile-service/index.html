@@ -935,7 +935,15 @@ a.card:focus-visible{ outline:none; box-shadow:0 0 0 2px var(--paper),0 0 0 5px 
 .sec:has(.rev-empty) .eyebrow::before{ margin-inline:auto; }
 
 /* ------------------------------------------------------------ area map */
-.areas{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px 18px; list-style:none; padding:0; margin:0; }
+/* Sized from the CONTENT, not from the viewport. These lists sit inside a
+   half-width .grid-2 cell (~558px at 1180px of wrap), so viewport-keyed column
+   counts are measuring the wrong box: the old rules went to 4 columns at 900px
+   and dealt this list ~130px tracks, wrapping every multi-word city and both
+   "All of ..." hub links onto two lines.
+   175px is the widest label (169px, "All of Southwest Florida") plus slack, so
+   auto-fill lands on a count that fits whatever container it is dropped into
+   and nothing wraps at any width. Do not reintroduce a fixed column count. */
+.areas{ display:grid; grid-template-columns:repeat(auto-fill,minmax(175px,1fr)); gap:10px 18px; list-style:none; padding:0; margin:0; align-content:start; }
 .areas a{ color:var(--cyan-light); font-size:.9375rem; text-decoration:none; }
 .areas a:hover{ color:#fff; text-decoration:underline; }
 
@@ -1093,7 +1101,6 @@ a.card:focus-visible{ outline:none; box-shadow:0 0 0 2px var(--paper),0 0 0 5px 
   .gal figure:nth-last-child(2):nth-child(3n+1),
   .gal figure:last-child:nth-child(3n+2){ grid-column:span 3; }
   .callbtn .cb-num{ display:inline; }
-  .areas{ grid-template-columns:repeat(3,minmax(0,1fr)); }
 }
 @media (min-width:900px){
   :root{ --gutter:24px; }
@@ -1141,7 +1148,6 @@ a.card:focus-visible{ outline:none; box-shadow:0 0 0 2px var(--paper),0 0 0 5px 
   .step{ grid-template-columns:minmax(0,1fr); }
   .ftr-grid{ grid-template-columns:1.9fr 1fr 1fr 1.2fr; gap:36px; }
   .ftr-legal{ grid-template-columns:minmax(0,1fr) auto; align-items:center; }
-  .areas{ grid-template-columns:repeat(4,minmax(0,1fr)); }
   .sticky{ display:none; }
   body.has-sticky{ padding-bottom:0; }
 
@@ -1736,7 +1742,13 @@ I called this morning at 8:30am, and by 10:30 he was here, it was all done by no
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">Where we go</span>
-      <h2>Southeast Florida &amp; the Southwest Gulf Coast coverage</h2>
+      <!-- AREA_SHORT, not AREA: the full label is a compound phrase ("Southeast
+           Florida & the Southwest Gulf Coast") that runs to three lines in a
+           display-size h2 and reads as a mouthful. The counties are enumerated
+           precisely in the lead below, so the heading only has to orient.
+           "Coverage across X" stays grammatical for a bare city name and for a
+           phrase like "the Portland metro" alike. -->
+      <h2>Coverage across South Florida</h2>
       <p class="lead" style="color:var(--text-on-dark-2)">The van covers seven counties — Miami-Dade, Broward, Palm Beach and Monroe on the east coast, Lee, Collier and Charlotte on the west. If your city is not named below, call: the answer is usually yes, and it is always a straight yes or no.</p>
     </div>
     <div class="grid grid-2">
