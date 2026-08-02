@@ -90,10 +90,16 @@ module.exports = {
     ],
 
     reviews: {
-      /* Not yet supplied — the site builds clean without it: rating bands are
-       * stripped rather than faked. Fill placeId, set GOOGLE_PLACES_API_KEY,
-       * run `npm run check:placeid`, and READ what it prints. */
-      placeId: '',
+      /* Recovered from the client's OWN properties, two independent sources
+       * that agree — so this is not a guessed listing:
+       *   1. the Google Maps embed on maximumglasscorp.com, whose CID pair
+       *      0xa5bef1e2840a8e25:0x755f452f38cdff5e decodes to exactly the ID
+       *      below, labelled "Maximum Glass";
+       *   2. the same ChIJ string appearing literally in the page source of
+       *      maximumglass.co.
+       * Still run `npm run check:placeid` once the API key exists and READ what
+       * it prints — the expect* guards below are the backstop, not a formality. */
+      placeId: 'ChIJJY4KhOLxvqURXv_NOC9FX3U',
       expectName: 'maximum',
       expectVertical: 'glass|windshield|auto\\s*glass',
       expectAddress: ',\\s*FL\\b|Florida'
