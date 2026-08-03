@@ -429,8 +429,22 @@ function statBandHtml() {
       stats.push({ value: String(years), label: 'years in business', count: years });
     }
   }
-  stats.push({ value: String(cityPages.length), label: 'cities covered',
-               count: cityPages.length });
+  /* Counties beat cities whenever the config names any. "5 cities covered"
+     directly contradicted the coverage band on the same page, which promises
+     seven counties from Miami to Naples — the stat made the business sound
+     SMALLER than its own headline claim, which is the one direction a trust
+     figure must never point.
+     Still derived, never authored: this counts the entries in areaServed that
+     are actually counties, so it cannot drift from what the site claims. A
+     client whose areaServed lists no counties falls back to city pages. */
+  const counties = (cfg.areaServed || []).filter((a) => /\bcount(y|ies)\b/i.test(a));
+  if (counties.length) {
+    stats.push({ value: String(counties.length), label: 'counties served',
+                 count: counties.length });
+  } else {
+    stats.push({ value: String(cityPages.length), label: 'cities covered',
+                 count: cityPages.length });
+  }
 
   return stats
     .map((st) => {

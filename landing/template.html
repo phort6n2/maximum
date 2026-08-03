@@ -1438,7 +1438,7 @@ a.card:focus-visible{ outline:none; box-shadow:0 0 0 2px var(--paper),0 0 0 5px 
             </div>
             <div class="field">
               <label class="label" for="ph">Mobile phone<span class="req" aria-hidden="true">*</span></label>
-              <input class="input" id="ph" name="phone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="(714) 555-0142">
+              <input class="input" id="ph" name="phone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="(305) 555-0142">
               <p class="err" id="ph-err"></p>
             </div>
           </div>
@@ -1451,7 +1451,7 @@ a.card:focus-visible{ outline:none; box-shadow:0 0 0 2px var(--paper),0 0 0 5px 
             </div>
             <div class="field">
               <label class="label" for="zip">Service ZIP<span class="req" aria-hidden="true">*</span></label>
-              <input class="input" id="zip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" maxlength="5" required placeholder="92614">
+              <input class="input" id="zip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" maxlength="5" required placeholder="33157">
               <p class="err" id="zip-err"></p>
             </div>
           </div>
@@ -1558,7 +1558,7 @@ a.card:focus-visible{ outline:none; box-shadow:0 0 0 2px var(--paper),0 0 0 5px 
           <div class="qc-ok-i">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
           </div>
-          <h3 tabindex="-1" id="okHead">You're all set, <span id="echoName">there</span>.</h3>
+          <h3 tabindex="-1" id="okHead">You're all set<span id="echoName"></span>.</h3>
           <p>We've got your request. A {{BRAND_SHORT}} tech will call you shortly to confirm the glass, your coverage and a time that works.</p>
           <p style="margin-top:16px"><a class="btn btn-primary btn-block" href="tel:{{PHONE_E164}}">Call us now — {{PHONE}}</a></p>
         </div>
@@ -2022,7 +2022,7 @@ a.card:focus-visible{ outline:none; box-shadow:0 0 0 2px var(--paper),0 0 0 5px 
   var LEAD_WEBHOOK = "{{LEAD_WEBHOOK}}";
 
   /* phone: format as they type, normalise to E.164 for GHL and Google
-     (both match E.164 far more reliably than "(714) 555-0142") */
+     (both match E.164 far more reliably than "(305) 555-0142") */
   function phDigits(v){
     var d = String(v || '').replace(/\D/g,'');
     if(d.length === 11 && d.charAt(0) === '1') d = d.slice(1);
@@ -2118,8 +2118,12 @@ a.card:focus-visible{ outline:none; box-shadow:0 0 0 2px var(--paper),0 0 0 5px 
     });
 
     function showSuccess(first){
+      /* The separator lives with the name: with one we render "You're all set,
+         Alex.", without one a clean "You're all set." The old markup hard-coded
+         ", there" into the heading, which read as a personalisation token that
+         had failed to substitute. */
       var echo = document.getElementById('echoName');
-      if(echo) echo.textContent = first;
+      if(echo) echo.textContent = (first && first !== 'there') ? ', ' + first : '';
       form.style.display = 'none';
       var ok = document.getElementById('quoteSuccess');
       ok.classList.add('on');

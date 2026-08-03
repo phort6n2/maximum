@@ -249,18 +249,18 @@ side is covered from the
     navLabel: 'Hollywood',
     shortLabel: 'Hollywood',
     title: 'Auto Glass Repair in Hollywood, FL | Maximum Glass',
-    desc: 'Mobile glass service for Hollywood FL — older neighborhoods, street-parked cars and beach-side buildings all handled at the kerb or driveway.',
+    desc: 'Mobile glass service for Hollywood FL — older neighborhoods, street-parked cars and beach-side buildings all handled at the curb or driveway.',
     eyebrow: 'Hollywood, FL',
     h1: 'Auto glass in Hollywood, from the beach to State Road 7',
     sub: '<p>Hollywood spans eighty years of housing in six miles — and every era parks its cars differently.</p>',
     svcValue: 'windshield-replacement',
     body: `
-<h2>A city of driveways, carports and kerbs</h2>
+<h2>A city of driveways, carports and curbs</h2>
 <p>East of Dixie Highway, Hollywood's mid-century neighborhoods — the Lakes,
 Hollywood Hills' older sections — mix short driveways, carports and honest
 street parking. Further west it turns to standard suburban driveways; along
 the beach it is condo and rental buildings. The van handles all three, with
-the kerb jobs needing one extra courtesy: a legal spot where the car and van
+the curb jobs needing one extra courtesy: a legal spot where the car and van
 can sit together for the duration. A carport, incidentally, is a gift in
 summer — shade over the work is the one upgrade money cannot buy at a shop.</p>
 
@@ -290,7 +290,7 @@ page</a> maps the rest of the corridor.</p>
 `,
     faq: [
       { q: 'My only parking is on the street. Can the work still happen?',
-        a: '<p>Usually yes — we need the car plus a van-length of legal kerb, and residential Hollywood generally has it. If your block is tight, a nearby lot, a friend\'s driveway or your workplace all solve it; tell us the situation and we will pick the spot together.</p>' },
+        a: '<p>Usually yes — we need the car plus a van-length of legal curb, and residential Hollywood generally has it. If your block is tight, a nearby lot, a friend\'s driveway or your workplace all solve it; tell us the situation and we will pick the spot together.</p>' },
       { q: 'Do you serve Dania Beach and Hallandale too?',
         a: '<p>Both, on the same routes that serve Hollywood proper — they book exactly the same way. The city pages exist for the biggest search cities; coverage is the whole corridor.</p>' }
     ]

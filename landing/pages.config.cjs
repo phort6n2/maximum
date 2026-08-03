@@ -289,7 +289,7 @@ module.exports = {
       caption: 'Cowl panel and wiper arms come off before the cut-out — pushing trim around glass is how scratches happen.' },
     { src: 'suction-set.webp', w: 1000, h: 563,
       alt: 'Technician pressing a new windshield into place with suction cups on a blue BMW',
-      caption: 'Suction handles carry the glass in level, so the moulding seats evenly on the first pass.' }
+      caption: 'Suction handles carry the glass in level, so the molding seats evenly on the first pass.' }
   ],
 
   /* ======================== body photography ======================== */
@@ -453,7 +453,7 @@ how the warranty stays honest.</p>
   <li>Covers go on the paint, wiper arms and cowl panel come off</li>
   <li>The old glass is cut out and the aperture trimmed and primed — not scraped bare</li>
   <li>A continuous urethane bead goes down in one pass</li>
-  <li>The new glass sets on alignment blocks, mouldings and trim go back</li>
+  <li>The new glass sets on alignment blocks, moldings and trim go back</li>
   <li>The urethane manufacturer's safe drive-away time goes to you in writing</li>
 </ul>
 
@@ -488,7 +488,7 @@ and nobody's warranty honestly does.</p>
       card: {
         icon: 'star',
         title: 'Chip &amp; crack repair',
-        blurb: 'Resin injection that stops a chip becoming a crack — a fraction of the cost of new glass, done at your kerb.',
+        blurb: 'Resin injection that stops a chip becoming a crack — a fraction of the cost of new glass, done at your curb.',
         cta: 'See chip repair'
       },
       navLabel: 'Chip repair',
@@ -691,7 +691,7 @@ expensive thing it might be.</p>
   <li><strong>Long or edge crack</strong> — a <a href="/ASSET/windshield-replacement">windshield replacement</a></li>
   <li><strong>Window off its track, or dead switch</strong> — regulator or motor work behind the <a href="/ASSET/door-glass-repair">door panel</a></li>
   <li><strong>Wet carpet after rain</strong> — a failed seal or blocked drain, found with water and patience, not guesswork</li>
-  <li><strong>Wind noise that grew over weeks</strong> — a lifting moulding or a previous installation letting go</li>
+  <li><strong>Wind noise that grew over weeks</strong> — a lifting molding or a previous installation letting go</li>
 </ul>
 
 <div class="callout">
@@ -855,7 +855,7 @@ as well. One diagnosis, one visit, one figure.</p>
       navLabel: 'Door glass',
       shortLabel: 'Door glass repair',
       title: 'Door Glass Repair & Regulators | Maximum Glass',
-      desc: 'Door glass, regulators, motors and switches repaired mobile across South Florida — panel off, fault found, fixed in one visit at your kerb.',
+      desc: 'Door glass, regulators, motors and switches repaired mobile across South Florida — panel off, fault found, fixed in one visit at your curb.',
       eyebrow: 'Door glass repair',
       h1: 'Door glass repair, from the inside of the door out',
       sub: '<p>Everything that makes a door window work lives behind the door panel — which is exactly where we start.</p>',
@@ -864,7 +864,7 @@ as well. One diagnosis, one visit, one figure.</p>
 <h2>What lives behind the panel</h2>
 <p>Pop the trim and a car door turns out to be a machine: the regulator that
 carries the glass, the motor that drives it, the run channels that guide it, the
-belt moulding that seals it, and the wiring that answers the switch. Any one of
+belt molding that seals it, and the wiring that answers the switch. Any one of
 them failing shows up as "the window is broken" from the driver's seat. The
 repair starts with the panel off and a meter and eyes on the actual fault — a
 step the parking-lot guess simply skips.</p>
